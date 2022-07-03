@@ -7,11 +7,11 @@ const slice = createSlice({
     initialState: {
         appInformation,
         appSettings: {
-            currentLanguage: 'es',
-            isLanguageCheckTriggered: true,
-            isPreferredThemeCheckTriggered: true,
-            isLanguageToggable: true,
-            isThemeToggable: true,
+            currentLanguage: 'en',
+            isLanguageCheckTriggered: false,
+            isPreferredThemeCheckTriggered: false,
+            isLanguageToggable: false,
+            isThemeToggable: false,
             mantainanceMode: false,
             supportedLanguages: Object.keys(supportedLanguages).slice(0, -1),
             theme: 'light'
@@ -24,7 +24,7 @@ const slice = createSlice({
             socialLinks
         },
         headerSettings: {
-            fixed: true
+            fixed: false
         },
         sidebar: {
             menuItems: navigationConfig(supportedLanguages['default']).headermenu

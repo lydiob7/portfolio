@@ -1,6 +1,6 @@
 const appInformation = {
-    appTitle: 'Project Template UI',
-    appLogo: '/images/logoTs.png',
+    appTitle: 'tomi scattini',
+    appLogo: false,
     creator: 'Tomi Scattini',
     creatorWebsite: 'https://tomiscattini.com/',
     repositoryUrl: 'https://github.com/Tomasscattini/project-template.git'

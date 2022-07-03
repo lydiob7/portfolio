@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import configureStore from 'store/configureStore';
 import { ThemeProvider } from 'components/theme';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import { Auth } from './auth';
 
 // Routes
 import { LanguageCheck, RoutesSwitch } from 'utils';
@@ -17,9 +16,7 @@ const App = () => {
                 <ThemeProvider>
                     <CssBaseline>
                         <LanguageCheck>
-                            <Auth>
-                                <RoutesSwitch />
-                            </Auth>
+                            <RoutesSwitch />
                         </LanguageCheck>
                     </CssBaseline>
                 </ThemeProvider>

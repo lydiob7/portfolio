@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+    }
+    *::-webkit-scrollbar {
+        width: 0;
+    }
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 3rem;
+    }
+    body {
+        @apply font-primary;
+        overflow-x: hidden;
+        width: 100vw;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-secondary;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply px-10;
+    }
+}
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('./assets/fonts/MonumentExtended-Regular.otf') format('otf'),
+        url('./assets/fonts/MonumentExtended-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MonumentExtended';
+    src: url('./assets/fonts/MonumentExtended-Ultrabold.otf') format('otf'),
+        url('./assets/fonts/MonumentExtended-Ultrabold.woff') format('woff');
+    font-weight: 800;
+    font-display: swap;
+    font-style: normal;
+}

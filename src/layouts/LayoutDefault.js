@@ -16,7 +16,8 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     pageWrapper: {
-        minHeight: 'calc(90vh - 50px)'
+        minHeight: '100vh',
+        paddingTop: '80px'
     },
     root: {
         backgroundColor: theme.palette.background.default
@@ -44,7 +45,6 @@ const LayoutDefault = ({ children, footer, scrollBtn }) => {
     const textProvider = useSelector(({ ui }) => ui.textContent.general);
 
     const showBtn = scrollBtn === undefined ? true : scrollBtn;
-    const showFooter = footer === undefined ? true : footer;
 
     return (
         <div className={internalClasses.root}>
@@ -59,7 +59,7 @@ const LayoutDefault = ({ children, footer, scrollBtn }) => {
                 {children}
             </div>
             {showBtn && <ScrollTopBtn />}
-            {showFooter && <Footer />}
+            {footer && <Footer />}
             <ToastMessage fixed={headerFixed} />
         </div>
     );

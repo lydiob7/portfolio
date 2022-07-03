@@ -1,24 +1,41 @@
 import { createTheme } from '@material-ui/core/styles';
 
+const colorsArray = ['#2A6871', '#F3725C', '#FF9BBF', '#32145D', '#05B18B', '#0E2F56', '#000000'];
+
+const getRandomColor = () => {
+    const randomIndex = new Date().getDay();
+    return colorsArray[randomIndex];
+};
+
 export const theme = (color) =>
     createTheme({
         palette: {
             type: color,
             primary: {
-                main: '#cd0370',
-                dark: '#934b8e',
+                main: getRandomColor(),
                 contrastText: '#FFFFFF'
-            },
-            secondary: {
-                main: '#00359f'
-            },
-            background: {
-                default: color === 'light' ? '#FAFAFA' : '#202020',
-                paper: color === 'light' ? '#FFFFFF' : '#303030'
             }
         },
         typography: {
-            fontFamily: "'Barlow', sans-serif"
+            fontFamily: "'MonumentExtended', sans-serif",
+            h1: {
+                fontFamily: "'MonumentExtended', sans-serif"
+            },
+            h2: {
+                fontFamily: "'MonumentExtended', sans-serif"
+            },
+            h3: {
+                fontFamily: "'MonumentExtended', sans-serif"
+            },
+            h4: {
+                fontFamily: "'MonumentExtended', sans-serif"
+            },
+            h5: {
+                fontFamily: "'MonumentExtended', sans-serif"
+            },
+            h6: {
+                fontFamily: "'MonumentExtended', sans-serif"
+            }
         },
         overrides: {
             MuiCssBaseline: {
@@ -38,7 +55,7 @@ export const theme = (color) =>
                         scrollbarWidth: 'thin'
                     },
                     body: {
-                        fontFamily: "'Barlow', sans-serif",
+                        fontFamily: "'MonumentExtended-Regular', sans-serif",
                         minHeight: '100vh',
                         margin: 0,
                         padding: 0,
@@ -50,6 +67,9 @@ export const theme = (color) =>
                         justifyContent: 'space-between',
                         minHeight: '100vh'
                     },
+                    'h1, h2, h3, h4, h5, h6': {
+                        fontWeight: 800
+                    },
                     ul: {
                         padding: 0,
                         margin: 0,
@@ -57,52 +77,7 @@ export const theme = (color) =>
                     },
                     a: {
                         backgroundColor: 'transparent',
-                        textDecoration: 'none !important'
-                    },
-                    '.fs-900': {
-                        fontSize: '2.4rem'
-                    },
-                    '.fs-800': {
-                        fontSize: '2.2rem'
-                    },
-                    '.fs-700': {
-                        fontSize: '2rem'
-                    },
-                    '.fs-600': {
-                        fontSize: '1.8rem'
-                    },
-                    '.fs-500': {
-                        fontSize: '1.6rem'
-                    },
-                    '.fs-400': {
-                        fontSize: '1.4rem'
-                    },
-                    '.fs-300': {
-                        fontSize: '1.3rem'
-                    },
-                    '.fs-200': {
-                        fontSize: '1.2rem'
-                    },
-                    '.fs-100': {
-                        fontSize: '1rem'
-                    },
-                    '.fw-700': {
-                        fontWeight: '700'
-                    },
-                    '.fw-600': {
-                        fontWeight: '600'
-                    },
-                    '.fw-500': {
-                        fontWeight: '500'
-                    },
-                    '.fw-400': {
-                        fontWeight: '400'
-                    },
-                    '.fw-300': {
-                        fontWeight: '300'
-                    },
-                    '.text-center': {
-                        textAlign: 'center'
+                        textDecoration: 'none'
                     }
                 }
             },

@@ -8,7 +8,7 @@ import { defaultRedirects } from 'config';
 
 const AppRoute = ({
     component: Component,
-    footer = true,
+    footer,
     layout = true,
     noLayoutFooter = false,
     noLayoutBtn = false,

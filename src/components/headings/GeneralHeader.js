@@ -1,76 +1,96 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import clsx from 'clsx';
 
-import { makeStyles } from '@material-ui/core/styles';
-import { parsePath } from 'utils/helpers';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-
-import CallModule from 'components/modules/CallModule';
-import Logo from 'components/common/Logo';
-import Navbar from 'components/common/Navbar';
-
-import { authRoles } from 'auth';
+import { Grid, makeStyles } from '@material-ui/core';
+// import { parsePath } from 'utils/helpers';
 
 const useStyles = makeStyles((theme) => ({
-    fixed: {
-        position: 'fixed',
-        zIndex: 2
+    appName: {
+        letterSpacing: '0.6rem'
+    },
+    letsTalkLink: {
+        position: 'relative',
+        color: theme.palette.primary.main,
+        padding: '.5rem 1rem',
+        borderRadius: '50%',
+        textTransform: 'uppercase',
+        fontFamily: theme.typography.h1.fontFamily,
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            border: '1px solid #ffffff',
+            borderRadius: '50%',
+            transform: 'rotate(-8deg)'
+        }
+    },
+    letsTalkLinkWrapper: {
+        justifyContent: 'flex-end'
     },
     root: {
+        position: 'fixed',
+        zIndex: '999',
         display: 'flex',
         alignItems: 'center',
+        backgroundColor: theme.palette.primary.main,
+        color: theme.palette.primary.contrastText,
         minHeight: '80px',
         minWidth: '100vw',
-        padding: '0 5vw'
-    },
-    logo: {
-        margin: '20px 0',
-        [theme.breakpoints.up('sm')]: {
-            margin: '0'
-        }
-    },
-    logoWrapper: {
-        justifyContent: 'center',
-        alignItems: 'center',
-        [theme.breakpoints.up('lg')]: {
-            justifyContent: 'flex-start'
-        }
-    },
-    navbar: {
-        position: 'absolute',
-        [theme.breakpoints.up('lg')]: {
-            position: 'relative',
-            justifyContent: 'flex-end'
-        }
+        padding: '0 5vw',
+        borderBottom: `1px solid ${theme.palette.primary.contrastText}`
     }
 }));
 
 export default function GeneralHeader({ fixed }) {
-    const classes = useStyles();
+    const internalClasses = useStyles();
     const menuItems = useSelector(({ ui }) => ui.sidebar.menuItems);
     const appInformation = useSelector(({ ui }) => ui.appInformation);
-    const { authenticated, data } = useSelector(({ auth }) => auth.user);
+    const textProvider = useSelector(({ ui }) => ui.textContent?.navigationMenu);
 
     return (
         <header>
-            <Paper component={Grid} container className={clsx(classes.root, fixed && classes.fixed)}>
-                <Grid container className={classes.logoWrapper} item xs={12} lg={6}>
-                    <Logo
-                        className={classes.logo}
-                        size="small"
-                        title={appInformation?.appTitle}
-                        imageSrc={parsePath(appInformation?.appLogo)}
-                    />
-                    {authenticated && data?.role === authRoles.patient && (
-                        <CallModule classes={{ button: classes.callButton }} />
-                    )}
+            <Grid container className={clsx(internalClasses.root)}>
+                <Grid item xs={6} md={4}>
+                    <HashLink to="#top">
+                        <h1 className={clsx(internalClasses.appName, 'capitalize text-xl')}>
+                            {appInformation?.appTitle}
+                        </h1>
+                    </HashLink>
                 </Grid>
-                <Grid className={classes.navbar} item container lg={6} alignItems="center">
-                    <Navbar appTitle={appInformation?.appTitle} menuItems={menuItems} />
+                <Grid container item xs={6} md={8}>
+                    <Grid component="nav" item xs={8} className="flex items-center">
+                        <ul className="flex items-center justify-between w-full">
+                            {menuItems.map((item) => (
+                                <li key={item?.path}>
+                                    {item?.path?.includes('#') ? (
+                                        <HashLink to={item?.path}>{item?.title}</HashLink>
+                                    ) : (
+                                        <Link to={item?.path}>{item?.title}</Link>
+                                    )}
+                                </li>
+                            ))}
+                        </ul>
+                    </Grid>
+                    <Grid className={clsx(internalClasses.letsTalkLinkWrapper, 'flex items-center')} item xs={4}>
+                        <a href="mailto:tomasscattini@gmail.com" target="_blank" rel="noreferrer">
+                            <div
+                                className={clsx(
+                                    internalClasses.letsTalkLink,
+                                    'flex items-center justify-center w-auto bg-white'
+                                )}
+                            >
+                                {textProvider?.letsTalk}
+                            </div>
+                        </a>
+                    </Grid>
                 </Grid>
-            </Paper>
+            </Grid>
         </header>
     );
 }

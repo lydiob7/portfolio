@@ -13,7 +13,7 @@ class Auth extends Component {
     };
 
     componentDidMount() {
-        return Promise.all([this.firebaseCheck()]).then(() => {
+        return Promise.all([]).then(() => {
             this.setState({ waitAuthCheck: false });
         });
     }
