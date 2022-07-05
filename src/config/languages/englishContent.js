@@ -15,6 +15,43 @@ const englishContent = {
     general: {
         skipNavigationAnchor: 'Skip navigation'
     },
+    aboutPage: {
+        pageTitle: 'About',
+        bio: [
+            'Argentinian (world-based) Full Stack Developer with a background in Popular Music. Enthusiast of web technologies, learning new skills, and finding new creative ways of solving problems.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, molestie ac adipiscing consectetur. Metus rutrum tellus nunc ut mi vel. Vulputate porta tortor ut vitae interdum donec netus eu. Arcu, aliquet risus sed tempus diam. Sit id tellus sit eleifend. Volutpat lacus, id pellentesque amet. Morbi lorem sem blandit at orci.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, molestie ac adipiscing consectetur. Metus rutrum tellus nunc ut mi vel. Vulputate porta tortor ut vitae interdum donec netus eu. Arcu, aliquet risus sed tempus diam. Sit id tellus sit eleifend. Volutpat lacus, id pellentesque amet. Morbi lorem sem blandit at orci.'
+        ],
+        resumeLink: 'Resume',
+        eventsTitle: 'Important events',
+        eventList: [
+            {
+                year: '1991',
+                content: 'I born',
+                status: 'Happy kid'
+            },
+            {
+                year: '2017',
+                content: 'Licenciatura musica popular',
+                status: 'Graduated'
+            },
+            {
+                year: '2018-2019',
+                content: 'Working holiday in Australia',
+                status: 'Traveler'
+            },
+            {
+                year: '2020',
+                content: 'Ironhack',
+                status: 'Student'
+            },
+            {
+                year: '2021',
+                content: 'Smart Studios',
+                status: 'Front-end'
+            }
+        ]
+    },
     homePage: {
         banner: {
             descriptionOne: 'Hello there, I am Tomi Scattini, Full Stack Developer by day',
@@ -26,6 +63,11 @@ const englishContent = {
         projects: {
             pageTitle: 'Projects',
             subtitle: 'Some projects that I am proud of'
+        },
+        skills: {
+            pageTitle: 'Some of the things I know how to do',
+            viewResults: 'View results',
+            resetAll: 'Reset All'
         }
     },
     landingPage: {
@@ -144,6 +186,14 @@ const englishContent = {
                 title: 'More'
             }
         }
+    },
+    projectPage: {
+        aboutTitle: 'About project',
+        technologiesTitle: 'Technologies',
+        codeTitle: 'Check the code',
+        liveTitle: 'Live project',
+        repoLink: 'github link',
+        websiteLink: 'website link'
     },
     settingsPage: {
         menu: {

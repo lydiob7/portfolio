@@ -14,4 +14,6 @@ const parseSeconds = (time) => {
 
 const mantainancePath = '/mantainance';
 
-export { mantainancePath, parsePath, parseSeconds };
+const getRandomId = () => Math.random().toString(36).slice(2);
+
+export { getRandomId, mantainancePath, parsePath, parseSeconds };

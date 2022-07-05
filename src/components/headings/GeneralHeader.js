@@ -11,9 +11,10 @@ const useStyles = makeStyles((theme) => ({
     appName: {
         letterSpacing: '0.6rem'
     },
-    letsTalkLink: {
+    letsTalkLink: (props) => ({
         position: 'relative',
-        color: theme.palette.primary.main,
+        color: props.isHeaderInverted ? theme.palette.primary.contrastText : theme.palette.primary.main,
+        backgroundColor: props.isHeaderInverted ? theme.palette.primary.main : theme.palette.primary.contrastText,
         padding: '.5rem 1rem',
         borderRadius: '50%',
         textTransform: 'uppercase',
@@ -21,34 +22,38 @@ const useStyles = makeStyles((theme) => ({
         '&::after': {
             content: '""',
             position: 'absolute',
+            zIndex: '9991',
             top: 0,
             left: 0,
             width: '100%',
             height: '100%',
-            border: '1px solid #ffffff',
+            border: `1px solid ${theme.palette.primary.contrastText}`,
             borderRadius: '50%',
             transform: 'rotate(-8deg)'
         }
-    },
+    }),
     letsTalkLinkWrapper: {
         justifyContent: 'flex-end'
     },
-    root: {
+    root: (props) => ({
         position: 'fixed',
         zIndex: '999',
         display: 'flex',
         alignItems: 'center',
-        backgroundColor: theme.palette.primary.main,
-        color: theme.palette.primary.contrastText,
+        backgroundColor: props.isHeaderInverted ? theme.palette.primary.contrastText : theme.palette.primary.main,
+        color: props.isHeaderInverted ? theme.palette.primary.main : theme.palette.primary.contrastText,
         minHeight: '80px',
         minWidth: '100vw',
         padding: '0 5vw',
-        borderBottom: `1px solid ${theme.palette.primary.contrastText}`
-    }
+        borderBottom: props.isHeaderInverted
+            ? `1px solid ${theme.palette.primary.main}`
+            : `1px solid ${theme.palette.primary.contrastText}`
+    })
 }));
 
 export default function GeneralHeader({ fixed }) {
-    const internalClasses = useStyles();
+    const isHeaderInverted = useSelector(({ ui }) => ui.headerSettings.isInverted);
+    const internalClasses = useStyles({ isHeaderInverted });
     const menuItems = useSelector(({ ui }) => ui.sidebar.menuItems);
     const appInformation = useSelector(({ ui }) => ui.appInformation);
     const textProvider = useSelector(({ ui }) => ui.textContent?.navigationMenu);
@@ -57,7 +62,7 @@ export default function GeneralHeader({ fixed }) {
         <header>
             <Grid container className={clsx(internalClasses.root)}>
                 <Grid item xs={6} md={4}>
-                    <HashLink to="#top">
+                    <HashLink to="/#top">
                         <h1 className={clsx(internalClasses.appName, 'capitalize text-xl')}>
                             {appInformation?.appTitle}
                         </h1>
@@ -82,7 +87,7 @@ export default function GeneralHeader({ fixed }) {
                             <div
                                 className={clsx(
                                     internalClasses.letsTalkLink,
-                                    'flex items-center justify-center w-auto bg-white'
+                                    'flex items-center justify-center w-auto'
                                 )}
                             >
                                 {textProvider?.letsTalk}

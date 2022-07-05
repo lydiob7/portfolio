@@ -24,7 +24,8 @@ const slice = createSlice({
             socialLinks
         },
         headerSettings: {
-            fixed: false
+            fixed: false,
+            isInverted: false
         },
         sidebar: {
             menuItems: navigationConfig(supportedLanguages['default']).headermenu
@@ -73,6 +74,14 @@ const slice = createSlice({
             state.sidebar.menuItems = navigationConfig(
                 supportedLanguages[action.payload] || supportedLanguages['default']
             ).headermenu;
+        },
+
+        setInvertedHeader: (state, action) => {
+            state.headerSettings.isInverted = true;
+        },
+
+        setNormalHeader: (state, action) => {
+            state.headerSettings.isInverted = false;
         }
     }
 });
@@ -80,6 +89,8 @@ const slice = createSlice({
 export const {
     themeDark,
     themeLight,
+    setInvertedHeader,
+    setNormalHeader,
     setThemePreferredCheckOn,
     setThemePreferredCheckOff,
     setThemeToggableOn,

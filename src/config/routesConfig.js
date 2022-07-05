@@ -1,6 +1,6 @@
 //* Import components here 👇👇
 import ErrorPage from 'pages/others/ErrorPage';
-import { HomePage } from 'pages';
+import { AboutPage, HomePage, ProjectPage, ResultsPage } from 'pages';
 
 import { parsePath } from 'utils/helpers';
 import authRoles from 'auth/authRoles';
@@ -20,9 +20,20 @@ export const routes = [
         exact: true
     },
     {
+        path: parsePath('/about'),
+        component: AboutPage,
+        exact: true
+    },
+    {
+        path: parsePath('/projects/:id'),
+        component: ProjectPage
+    },
+    {
+        path: parsePath('/results'),
+        component: ResultsPage
+    },
+    {
         component: ErrorPage,
-        layout: false,
-        noLayoutFooter: true,
-        noLayoutBtn: true
+        layout: false
     }
 ];

@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useLayoutEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { setNormalHeader } from 'store/uiSlice';
 import clsx from 'clsx';
 
 import { makeStyles } from '@material-ui/core';
@@ -16,6 +18,11 @@ const useStyles = makeStyles((theme) => ({
 
 const HomePage = ({ classes, ...props }) => {
     const internalClasses = useStyles();
+    const dispatch = useDispatch();
+
+    useLayoutEffect(() => {
+        dispatch(setNormalHeader());
+    }, [dispatch]);
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>

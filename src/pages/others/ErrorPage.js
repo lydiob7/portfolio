@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
         textAlign: 'center',
-        paddingTop: '60px',
+        paddingTop: '20vh',
         minHeight: '70vh',
         '& img': {
             width: '100%'
@@ -31,10 +31,14 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             fontSize: '1rem'
         }
+    },
+    statusCode: {
+        fontSize: '8rem',
+        color: theme.palette.primary.main
     }
 }));
 
-function ErrorPage({ errorimg = '/images/404.svg' }) {
+function ErrorPage() {
     const internalClasses = useStyles();
 
     const textProvider = useSelector(({ ui }) => ui.textContent.errorPage);
@@ -44,7 +48,7 @@ function ErrorPage({ errorimg = '/images/404.svg' }) {
             <Grid container justifyContent="center">
                 <Grid container spacing={4} justifyContent="center" item xs={12} sm={6}>
                     <Grid item xs={12}>
-                        <img src={parsePath(errorimg)} alt="error" />
+                        <Typography className={internalClasses.statusCode}>404</Typography>
                     </Grid>
                     <Grid item xs={12}>
                         <Typography className={clsx(internalClasses.title, 'fs-800')} variant="h2" color="textPrimary">

@@ -12,7 +12,7 @@
     }
     html {
         scroll-behavior: smooth;
-        scroll-padding-top: 3rem;
+        scroll-padding-top: 0;
     }
     body {
         @apply font-primary;
@@ -20,12 +20,7 @@
         width: 100vw;
     }
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
+    h1 {
         @apply font-secondary;
     }
 }
@@ -37,7 +32,7 @@
 }
 
 @font-face {
-    font-family: 'MonumentExtended';
+    font-family: 'MonumentExtended-Regular';
     src: url('./assets/fonts/MonumentExtended-Regular.otf') format('otf'),
         url('./assets/fonts/MonumentExtended-Regular.woff') format('woff');
     font-weight: 400;
@@ -46,7 +41,7 @@
 }
 
 @font-face {
-    font-family: 'MonumentExtended';
+    font-family: 'MonumentExtended-Bold';
     src: url('./assets/fonts/MonumentExtended-Ultrabold.otf') format('otf'),
         url('./assets/fonts/MonumentExtended-Ultrabold.woff') format('woff');
     font-weight: 800;

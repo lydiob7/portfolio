@@ -35,6 +35,7 @@ const Banner = ({ classes, ...props }) => {
     const internalClasses = useStyles();
 
     const textProvider = useSelector(({ ui }) => ui.textContent?.homePage?.banner);
+    const currentLanguage = useSelector(({ ui }) => ui.appSettings?.currentLanguage);
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
@@ -43,7 +44,7 @@ const Banner = ({ classes, ...props }) => {
                     {textProvider?.descriptionOne}
                     {textProvider?.descriptionTwo}
                 </p>
-                <div className="relative flex w-full justify-center">
+                <div className={clsx('relative flex w-full justify-center', currentLanguage === 'es' && 'mt-16')}>
                     <div className="h-[40vh] overflow-hidden translate-y-[-2rem]">
                         <img className="h-full" src={banner1} alt="Tomi on a cafe in Catania" />
                     </div>

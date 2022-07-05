@@ -15,6 +15,43 @@ const spanishContent = {
     general: {
         skipNavigationAnchor: 'Saltar navegación'
     },
+    aboutPage: {
+        pageTitle: 'Acerca',
+        bio: [
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, molestie ac adipiscing consectetur. Metus rutrum tellus nunc ut mi vel. Vulputate porta tortor ut vitae interdum donec netus eu. Arcu, aliquet risus sed tempus diam. Sit id tellus sit eleifend. Volutpat lacus, id pellentesque amet. Morbi lorem sem blandit at orci.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, molestie ac adipiscing consectetur. Metus rutrum tellus nunc ut mi vel. Vulputate porta tortor ut vitae interdum donec netus eu. Arcu, aliquet risus sed tempus diam. Sit id tellus sit eleifend. Volutpat lacus, id pellentesque amet. Morbi lorem sem blandit at orci.',
+            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, molestie ac adipiscing consectetur. Metus rutrum tellus nunc ut mi vel. Vulputate porta tortor ut vitae interdum donec netus eu. Arcu, aliquet risus sed tempus diam. Sit id tellus sit eleifend. Volutpat lacus, id pellentesque amet. Morbi lorem sem blandit at orci.'
+        ],
+        resumeLink: 'Curriculum',
+        eventsTitle: 'Eventos importantes',
+        eventList: [
+            {
+                year: '1991',
+                content: 'Nací',
+                status: 'Niño feliz'
+            },
+            {
+                year: '2017',
+                content: 'Licenciatura musica popular',
+                status: 'Graduado'
+            },
+            {
+                year: '2018-2019',
+                content: 'Trabajo y vacaciones en Australia',
+                status: 'Viajero'
+            },
+            {
+                year: '2020',
+                content: 'Ironhack',
+                status: 'Estudiante'
+            },
+            {
+                year: '2021',
+                content: 'Smart Studios',
+                status: 'Front-end'
+            }
+        ]
+    },
     homePage: {
         banner: {
             descriptionOne: 'Hola, Soy Tomi Scattini, Desarrollador Full Stack de día',
@@ -26,6 +63,11 @@ const spanishContent = {
         projects: {
             pageTitle: 'Proyectos',
             subtitle: 'Algunos proyectos de los que me siento orgulloso'
+        },
+        skills: {
+            pageTitle: 'Algunas de las cosas que sé hacer',
+            viewResults: 'Ver resultados',
+            resetAll: 'Reiniciar todo'
         }
     },
     landingPage: {
@@ -145,6 +187,14 @@ const spanishContent = {
                 title: 'Más'
             }
         }
+    },
+    projectPage: {
+        aboutTitle: 'Acerca del proyecto',
+        technologiesTitle: 'Tecnologías',
+        codeTitle: 'Mirá el código',
+        liveTitle: 'Proyecto en vivo',
+        repoLink: 'link github',
+        websiteLink: 'link website'
     },
     settingsPage: {
         menu: {

@@ -17,24 +17,24 @@ export const theme = (color) =>
             }
         },
         typography: {
-            fontFamily: "'MonumentExtended', sans-serif",
+            fontFamily: "'MonumentExtended-Regular', sans-serif",
             h1: {
-                fontFamily: "'MonumentExtended', sans-serif"
+                fontFamily: "'MonumentExtended-Bold', sans-serif"
             },
             h2: {
-                fontFamily: "'MonumentExtended', sans-serif"
+                fontFamily: "'MonumentExtended-Bold', sans-serif"
             },
             h3: {
-                fontFamily: "'MonumentExtended', sans-serif"
+                fontFamily: "'MonumentExtended-Bold', sans-serif"
             },
             h4: {
-                fontFamily: "'MonumentExtended', sans-serif"
+                fontFamily: "'MonumentExtended-Bold', sans-serif"
             },
             h5: {
-                fontFamily: "'MonumentExtended', sans-serif"
+                fontFamily: "'MonumentExtended-Bold', sans-serif"
             },
             h6: {
-                fontFamily: "'MonumentExtended', sans-serif"
+                fontFamily: "'MonumentExtended-Bold', sans-serif"
             }
         },
         overrides: {
@@ -56,6 +56,7 @@ export const theme = (color) =>
                     },
                     body: {
                         fontFamily: "'MonumentExtended-Regular', sans-serif",
+                        fontWeight: 400,
                         minHeight: '100vh',
                         margin: 0,
                         padding: 0,
@@ -66,9 +67,6 @@ export const theme = (color) =>
                         flexDirection: 'column',
                         justifyContent: 'space-between',
                         minHeight: '100vh'
-                    },
-                    'h1, h2, h3, h4, h5, h6': {
-                        fontWeight: 800
                     },
                     ul: {
                         padding: 0,
