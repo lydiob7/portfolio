@@ -2,13 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import skills from 'data/skills';
 
 const slice = createSlice({
-    name: 'projects',
+    name: 'skills',
     initialState: {
-        list: skills
+        list: skills,
+        matchingProjects: []
     },
     reducers: {}
 });
 
-// export const { } = slice.actions;
+// export const {  } = slice.actions;
 
 export default slice.reducer;

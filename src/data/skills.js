@@ -1,20 +1,18 @@
-import { getRandomId } from 'utils/helpers';
-
 const skills = [
     {
-        id: getRandomId(),
+        id: 'javascript',
         title: 'JavaScript(ES6)'
     },
     {
-        id: getRandomId(),
+        id: 'react',
         title: 'ReactJS'
     },
     {
-        id: getRandomId(),
+        id: 'express',
         title: 'Express'
     },
     {
-        id: getRandomId(),
+        id: 'guitar',
         en: {
             title: 'Play guitar'
         },
@@ -23,35 +21,35 @@ const skills = [
         }
     },
     {
-        id: getRandomId(),
+        id: 'html',
         title: 'HTML5'
     },
     {
-        id: getRandomId(),
+        id: 'mongodb',
         title: 'MongoDB'
     },
     {
-        id: getRandomId(),
+        id: 'redux',
         title: 'Redux'
     },
     {
-        id: getRandomId(),
+        id: 'scss',
         title: 'SCSS/SASS'
     },
     {
-        id: getRandomId(),
-        title: 'Axios'
+        id: 'firebase',
+        title: 'Firebase'
     },
     {
-        id: getRandomId(),
+        id: 'node',
         title: 'NodeJS'
     },
     {
-        id: getRandomId(),
+        id: 'wordpress',
         title: 'Wordpress'
     },
     {
-        id: getRandomId(),
+        id: 'bass',
         en: {
             title: 'Play bass'
         },
@@ -60,11 +58,11 @@ const skills = [
         }
     },
     {
-        id: getRandomId(),
+        id: 'typescript',
         title: 'Typescript'
     },
     {
-        id: getRandomId(),
+        id: 'sing',
         en: {
             title: 'Sing a song'
         },
@@ -73,20 +71,49 @@ const skills = [
         }
     },
     {
-        id: getRandomId(),
-        title: 'Bootstrap'
+        id: 'materialui',
+        title: 'Material UI'
     },
     {
-        id: getRandomId(),
+        id: 'tailwind',
+        title: 'Tailwind'
+    },
+    {
+        id: 'antd',
+        title: 'Ant Design'
+    },
+    {
+        id: 'styled-components',
+        title: 'Styled Components'
+    },
+    {
+        id: 'heroku',
         title: 'Heroku'
     },
     {
-        id: getRandomId(),
+        id: 'css',
         title: 'CSS3'
     },
     {
-        id: getRandomId(),
+        id: 'composition',
+        en: {
+            title: 'Compose music'
+        },
+        es: {
+            title: 'Componer música'
+        }
+    },
+    {
+        id: 'api',
         title: 'REST APIs'
+    },
+    {
+        id: 'jquery',
+        title: 'JQuery'
+    },
+    {
+        id: 'contentful',
+        title: 'Contentful'
     }
 ];
 

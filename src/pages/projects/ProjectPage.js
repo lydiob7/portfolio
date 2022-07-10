@@ -19,6 +19,32 @@ const useStyles = makeStyles((theme) => ({
             color: theme.palette.primary.main
         }
     },
+    image: {
+        display: 'block',
+        cursor: 'pointer',
+        position: 'relative',
+        '&:hover::after': {
+            opacity: 0
+        },
+        '&:hover img': {
+            filter: 'none'
+        },
+        '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundColor: theme.palette.primary.main,
+            opacity: 0.15,
+            transition: 'all .3s ease'
+        },
+        '& img': {
+            filter: 'grayscale(100%)',
+            transition: 'all .3s ease'
+        }
+    },
     next: {
         right: 0
     },
@@ -62,6 +88,12 @@ const useStyles = makeStyles((theme) => ({
                     [theme.breakpoints.up('md')]: {
                         fontSize: '1.2rem'
                     }
+                },
+                '& .content': {
+                    '& li': {
+                        margin: '.5rem 0',
+                        listStyle: 'disc'
+                    }
                 }
             }
         }
@@ -94,9 +126,9 @@ const ProjectPage = ({ classes, ...props }) => {
         <Container maxWidth="lg" className={clsx(internalClasses.root, classes?.root)} {...props}>
             <div className="left-side">
                 <h2>{currentProject?.data?.title}</h2>
-                <div className={internalClasses.image}>
+                <a href={currentProject?.websiteUrl} target="_blank" rel="noreferrer" className={internalClasses.image}>
                     <img src={currentProject?.mainImage} alt={currentProject?.data?.title} />
-                </div>
+                </a>
             </div>
             <div className="right-side">
                 <div className="section">

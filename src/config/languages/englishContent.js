@@ -18,9 +18,9 @@ const englishContent = {
     aboutPage: {
         pageTitle: 'About',
         bio: [
-            'Argentinian (world-based) Full Stack Developer with a background in Popular Music. Enthusiast of web technologies, learning new skills, and finding new creative ways of solving problems.',
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, molestie ac adipiscing consectetur. Metus rutrum tellus nunc ut mi vel. Vulputate porta tortor ut vitae interdum donec netus eu. Arcu, aliquet risus sed tempus diam. Sit id tellus sit eleifend. Volutpat lacus, id pellentesque amet. Morbi lorem sem blandit at orci.',
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque, molestie ac adipiscing consectetur. Metus rutrum tellus nunc ut mi vel. Vulputate porta tortor ut vitae interdum donec netus eu. Arcu, aliquet risus sed tempus diam. Sit id tellus sit eleifend. Volutpat lacus, id pellentesque amet. Morbi lorem sem blandit at orci.'
+            "I'm an Argentinian (world-based) Full Stack Developer with a background in Popular Music. Enthusiast of web technologies, learning new skills, and finding new creative ways of solving problems.",
+            'I have worked as a Music teacher in my home country for five years until my urge of adventure made me decide to hit the road and travel around the world. By working as a teacher I learnt to work as part of an interdisciplinary team. Travel helped me to acquire the confidence to quickly adapt to various situations. ',
+            'I have solid knowledge of ReactJs, Redux, HTML5, CSS (with pre processors and libraries such as Sass or Tailwind) and an extensive knowledge of React Native and backend technologies (NodeJS, Express, MongoDB)'
         ],
         resumeLink: 'Resume',
         eventsTitle: 'Important events',
@@ -194,6 +194,10 @@ const englishContent = {
         liveTitle: 'Live project',
         repoLink: 'github link',
         websiteLink: 'website link'
+    },
+    resultsPage: {
+        pageTitle: 'Results',
+        repoLink: 'Repository'
     },
     settingsPage: {
         menu: {

@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
         textTransform: 'uppercase',
         margin: '0 1rem'
     },
+    disabledButton: {
+        opacity: 0.3,
+        cursor: 'default'
+    },
     pageTitle: {
         textTransform: 'uppercase',
         [theme.breakpoints.up('md')]: {
@@ -22,9 +26,9 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     root: {
-        height: '100vh',
+        minHeight: '100vh',
         color: theme.palette.primary.main,
-        paddingTop: '80px'
+        padding: '4rem 0'
     },
     skillsGrid: {
         display: 'grid',
@@ -95,11 +99,18 @@ const Skills = ({ classes, ...props }) => {
                         </Button>
                     </Link>
                 ) : (
-                    <Button className={clsx(internalClasses.button, internalClasses?.underlineLink)} variant="text">
+                    <Button className={clsx(internalClasses.button, internalClasses.disabledButton)} variant="text">
                         {textProvider?.viewResults}
                     </Button>
                 )}
-                <Button onClick={() => setCheckedSkills({})} className={internalClasses.button} variant="text">
+                <Button
+                    onClick={() => setCheckedSkills({})}
+                    className={clsx(
+                        internalClasses.button,
+                        Object.keys(checkedSkills)?.length === 0 && internalClasses.disabledButton
+                    )}
+                    variant="text"
+                >
                     {textProvider?.resetAll}
                 </Button>
             </div>

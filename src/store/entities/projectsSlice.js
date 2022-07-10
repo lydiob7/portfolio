@@ -1,7 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import chapati from 'data/chapati';
-import gabiPortfolio from 'data/gabiPortfolio';
-import tierraRoja from 'data/tierraRoja';
+import projects from 'data/projects';
 
 export const setProject = (projectId) => (dispatch, getState) => {
     const currentLanguage = getState()?.ui?.appSettings?.currentLanguage;
@@ -10,22 +8,33 @@ export const setProject = (projectId) => (dispatch, getState) => {
     if (currentProject) dispatch(setProjectText({ ...currentProject, data: currentProject[currentLanguage] }));
 };
 
+export const filterResultsBySkills = (skills) => (dispatch, getState) => {
+    const results = projects.getBySkills(skills);
+
+    dispatch(setMatchingProjects(results));
+};
+
 const slice = createSlice({
     name: 'projects',
     initialState: {
-        list: [gabiPortfolio, chapati, tierraRoja],
-        currentProject: {}
+        list: projects.getFeatured(),
+        currentProject: {},
+        matchingProjects: []
     },
     reducers: {
         resetState: (state, action) => {
             state.currentProject = {};
+            state.matchingProjects = [];
         },
         setProjectText: (state, action) => {
             state.currentProject = action.payload;
+        },
+        setMatchingProjects: (state, action) => {
+            state.matchingProjects = action.payload;
         }
     }
 });
 
-export const { resetState, setProjectText } = slice.actions;
+export const { resetState, setMatchingProjects, setProjectText } = slice.actions;
 
 export default slice.reducer;
