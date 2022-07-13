@@ -135,6 +135,14 @@ const ResultsPage = ({ classes, ...props }) => {
     }, [dispatch]);
 
     useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }, []);
+
+    useEffect(() => {
         if (skillsFromParams) dispatch(filterResultsBySkills(skillsFromParams));
     }, [dispatch, skillsFromParams]);
 

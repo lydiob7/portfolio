@@ -12,6 +12,8 @@ import { Email as EmailIcon, GitHub as GitHubIcon, LinkedIn as LinkedInIcon } fr
 
 const useStyles = makeStyles((theme) => ({
     description: {
+        display: 'block',
+        minHeight: '175px',
         fontSize: '1.5rem',
         fontWeight: 600,
         textTransform: 'uppercase',
@@ -21,12 +23,41 @@ const useStyles = makeStyles((theme) => ({
             lineHeight: '1'
         }
     },
+    image: {
+        height: 'auto',
+        width: '50%',
+        overflow: 'hidden',
+        [theme.breakpoints.up('sm')]: {
+            height: '300px',
+            width: 'auto'
+        },
+        '& img': {
+            height: '100%'
+        }
+    },
+    imageTwo: {
+        [theme.breakpoints.up('sm')]: {
+            position: 'absolute',
+            zIndex: 20,
+            right: '6rem'
+        }
+    },
+    languagesSwitch: {
+        top: '30%',
+        [theme.breakpoints.up('sm')]: {
+            top: '25%'
+        },
+        right: '10vw',
+        [theme.breakpoints.up('md')]: {
+            top: '30vh'
+        }
+    },
     root: {
         position: 'relative',
         backgroundColor: theme.palette.primary.main,
         minHeight: 'calc(100vh - 80px)',
         color: theme.palette.primary.contrastText,
-        paddingTop: '10vh'
+        padding: '8vh 0'
     }
 }));
 
@@ -44,16 +75,21 @@ const Banner = ({ classes, ...props }) => {
                     {textProvider?.descriptionOne}
                     {textProvider?.descriptionTwo}
                 </p>
-                <div className={clsx('relative flex w-full justify-center', currentLanguage === 'es' && 'mt-16')}>
-                    <div className="h-[40vh] overflow-hidden translate-y-[-2rem]">
-                        <img className="h-full" src={banner1} alt="Tomi on a cafe in Catania" />
+                <div
+                    className={clsx(
+                        'relative flex w-full sm:justify-center mt-24 sm:mt-auto',
+                        currentLanguage === 'es' && 'sm:mt-16'
+                    )}
+                >
+                    <div className={clsx(internalClasses.image, internalClasses.imageOne, 'translate-y-[-2rem]')}>
+                        <img src={banner1} alt="Tomi on a cafe in Catania" />
                     </div>
-                    <div className="absolute z-20 right-32 h-[40vh] overflow-hidden ">
-                        <img className="h-full" src={banner2} alt="Tomi playing bass in NYC" />
+                    <div className={clsx(internalClasses.image, internalClasses.imageTwo)}>
+                        <img src={banner2} alt="Tomi playing bass in NYC" />
                     </div>
                 </div>
             </Container>
-            <ul className="absolute flex flex-col justify-between gap-5 left-32 bottom-40">
+            <ul className="md:absolute flex md:flex-col justify-center md:justify-between gap-5 md:left-32 md:bottom-40 mt-16 md:mt-auto">
                 <li>
                     <a href="https://github.com/lydiob7" target="_blank" rel="noreferrer">
                         <GitHubIcon fontSize="large" />
@@ -71,7 +107,7 @@ const Banner = ({ classes, ...props }) => {
                 </li>
             </ul>
 
-            <div className="absolute flex flex-col justify-between right-32 bottom-72 w-20">
+            <div className={clsx(internalClasses.languagesSwitch, 'absolute flex flex-col justify-between w-20')}>
                 <Button
                     onClick={() => dispatch(languageChanged('en'))}
                     variant="text"
