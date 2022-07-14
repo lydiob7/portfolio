@@ -194,6 +194,7 @@ const spanishContent = {
         codeTitle: 'Mirá el código',
         liveTitle: 'Proyecto en vivo',
         repoLink: 'link github',
+        seeAll: 'Ver Todo',
         websiteLink: 'link website'
     },
     resultsPage: {

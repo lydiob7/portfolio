@@ -46,34 +46,66 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     next: {
-        right: 0
+        right: '24px',
+        [theme.breakpoints.up('lg')]: {
+            right: 0
+        }
     },
     previous: {
-        left: 0
+        left: '24px',
+        [theme.breakpoints.up('lg')]: {
+            left: 0
+        }
     },
     root: {
         position: 'relative',
         color: theme.palette.primary.main,
         display: 'flex',
+        flexDirection: 'column',
         gap: '3rem',
-        padding: '5vh 0',
+        paddingTop: '5vh',
+        paddingBottom: '20vh',
         minHeight: 'calc(100vh - 80px)',
+        [theme.breakpoints.up('md')]: {
+            paddingBottom: '5vh',
+            flexDirection: 'row'
+        },
         '& .left-side': {
             flexBasis: '40%',
             '& h2': {
                 textTransform: 'uppercase',
-                marginBottom: '8rem',
+                marginBottom: '2rem',
+                fontSize: '2rem',
                 [theme.breakpoints.up('md')]: {
-                    fontSize: '2rem'
+                    marginBottom: '8rem'
                 }
             }
         },
         '& .right-side': {
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, 1fr)',
+            display: 'flex',
             gap: '2rem',
-            flexBasis: '60%',
+            overflowX: 'scroll',
+            scrollbarWidth: 'none',
+            scrollBehavior: 'smooth',
+            scrollSnapType: 'x mandatory',
+            [theme.breakpoints.up('md')]: {
+                display: 'grid',
+                flexBasis: '60%',
+                width: 'auto',
+                gridTemplateColumns: 'repeat(2, 1fr)'
+            },
+            '&::-webkit-scrollbar': {
+                width: 0,
+                height: 0
+            },
             '& .section': {
+                width: 'calc(100vw - 24px)',
+                flexShrink: 0,
+                scrollSnapAlign: 'start',
+                scrollSnapStop: 'always',
+                [theme.breakpoints.up('md')]: {
+                    width: 'auto'
+                },
                 '& .number': {
                     fontFamily: theme.typography.h1.fontFamily,
                     fontSize: '2rem',
@@ -93,6 +125,30 @@ const useStyles = makeStyles((theme) => ({
                     '& li': {
                         margin: '.5rem 0',
                         listStyle: 'disc'
+                    }
+                }
+            }
+        },
+        '& .dots': {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'flex-end',
+            marginTop: '2rem',
+            height: '100%',
+            [theme.breakpoints.up('md')]: {
+                display: 'none'
+            },
+            '&>div': {
+                display: 'flex',
+                justifyContent: 'center',
+                '&>span': {
+                    width: '10px',
+                    height: '10px',
+                    borderRadius: '100%',
+                    border: `2px solid ${theme.palette.primary.main}`,
+                    margin: '0 1rem',
+                    '&.fill': {
+                        backgroundColor: theme.palette.primary.main
                     }
                 }
             }
@@ -131,7 +187,7 @@ const ProjectPage = ({ classes, ...props }) => {
                 </a>
             </div>
             <div className="right-side">
-                <div className="section">
+                <div id="1" className="section">
                     <p className="number">01</p>
                     <h3 className="title">{textProvider?.aboutTitle}</h3>
                     <ul className="content">
@@ -140,7 +196,7 @@ const ProjectPage = ({ classes, ...props }) => {
                         ))}
                     </ul>
                 </div>
-                <div className="section">
+                <div id="2" className="section">
                     <p className="number">02</p>
                     <h3 className="title">{textProvider?.technologiesTitle}</h3>
                     <ul className="content">
@@ -149,19 +205,27 @@ const ProjectPage = ({ classes, ...props }) => {
                         ))}
                     </ul>
                 </div>
-                <div className="section">
+                <div id="3" className="section">
                     <p className="number">03</p>
                     <h3 className="title">{textProvider?.codeTitle}</h3>
                     <a href={currentProject?.githubRepo} target="_blank" rel="noreferrer">
                         {textProvider?.repoLink}
                     </a>
                 </div>
-                <div className="section">
+                <div id="4" className="section">
                     <p className="number">04</p>
                     <h3 className="title">{textProvider?.liveTitle}</h3>
                     <a href={currentProject?.websiteUrl} target="_blank" rel="noreferrer">
                         {textProvider?.websiteLink}
                     </a>
+                </div>
+            </div>
+            <div className="dots">
+                <div>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
 
@@ -175,8 +239,12 @@ const ProjectPage = ({ classes, ...props }) => {
                     </IconButton>
                 </Link>
             ) : (
-                <HashLink to="/#work" className={clsx(internalClasses.arrow, internalClasses.previous)}>
-                    See All
+                <HashLink
+                    style={{ marginBottom: '1rem' }}
+                    to="/#work"
+                    className={clsx(internalClasses.arrow, internalClasses.previous)}
+                >
+                    {textProvider?.seeAll}
                 </HashLink>
             )}
             {currentProject?.next ? (
@@ -189,8 +257,12 @@ const ProjectPage = ({ classes, ...props }) => {
                     </IconButton>
                 </Link>
             ) : (
-                <HashLink to="/#work" className={clsx(internalClasses.arrow, internalClasses.next)}>
-                    See All
+                <HashLink
+                    style={{ marginBottom: '1rem' }}
+                    to="/#work"
+                    className={clsx(internalClasses.arrow, internalClasses.next)}
+                >
+                    {textProvider?.seeAll}
                 </HashLink>
             )}
         </Container>

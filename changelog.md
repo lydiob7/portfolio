@@ -7,6 +7,8 @@
 -   Feautre: Make About page responsive.
 -   Feature: Make Results page responsive.
 -   Feature: Banner animation.
+-   Feature: Make project page responsive.
+-   Feature: Make skills section on home page responsive.
 
 ### v2.1.0
 

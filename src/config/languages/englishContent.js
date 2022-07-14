@@ -193,6 +193,7 @@ const englishContent = {
         codeTitle: 'Check the code',
         liveTitle: 'Live project',
         repoLink: 'github link',
+        seeAll: 'See All',
         websiteLink: 'website link'
     },
     resultsPage: {

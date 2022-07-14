@@ -1,3 +1,12 @@
+function chunkanizeArray(array, chunkSize = 6) {
+    const arrayOfChunks = [];
+    for (let i = 0; i < array.length; i += chunkSize) {
+        const chunk = array.slice(i, i + chunkSize);
+        arrayOfChunks.push(chunk);
+    }
+    return arrayOfChunks;
+}
+
 function parsePath(uri = '') {
     return `${process.env.PUBLIC_URL}${uri}`;
 }
@@ -16,4 +25,4 @@ const mantainancePath = '/mantainance';
 
 const getRandomId = () => Math.random().toString(36).slice(2);
 
-export { getRandomId, mantainancePath, parsePath, parseSeconds };
+export { chunkanizeArray, getRandomId, mantainancePath, parsePath, parseSeconds };
