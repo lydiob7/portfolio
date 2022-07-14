@@ -8,21 +8,33 @@ import { Container, makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     projectsWrapper: {
         textTransform: 'uppercase',
-        paddingTop: '5rem',
+        paddingTop: '10rem',
+        fontSize: '1.5rem',
         [theme.breakpoints.up('md')]: {
+            paddingTop: '5rem',
             fontSize: '2rem'
         },
         '&>div': {
-            paddingBottom: '4rem',
-            borderBottom: '1px solid #FFFFFF',
-            '& p': {
+            [theme.breakpoints.up('md')]: {
+                paddingBottom: '4rem',
+                borderBottom: '1px solid #FFFFFF'
+            },
+            '&>a': {
+                display: 'flex',
+                gap: '1rem',
+                padding: '1rem 0',
                 borderBottom: '1px solid #FFFFFF',
+                [theme.breakpoints.up('md')]: {
+                    alignItems: 'center',
+                    padding: 0
+                },
                 '&>span': {
                     fontSize: '1.2rem',
                     [theme.breakpoints.up('md')]: {
                         fontSize: '3rem'
                     }
-                }
+                },
+                '& p': {}
             }
         }
     },
@@ -37,16 +49,21 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'flex-end',
         width: '100%',
         '&>div': {
-            marginRight: '10vw',
-            '& h2': {
+            marginRight: '1rem',
+            textAlign: 'right',
+            [theme.breakpoints.up('md')]: {
                 textAlign: 'center',
+                marginRight: '10vw'
+            },
+            '& h2': {
                 fontWeight: 400,
+                fontSize: '1.8rem',
                 [theme.breakpoints.up('md')]: {
                     fontSize: '3rem'
                 }
             },
             '& p': {
-                textAlign: 'center',
+                fontSize: '.7rem',
                 [theme.breakpoints.up('md')]: {
                     fontSize: '1rem'
                 }
@@ -76,9 +93,8 @@ const Projects = ({ classes, ...props }) => {
                     {projects?.map((project) => (
                         <div key={project?.id}>
                             <Link to={`/projects/${project?.id}`}>
-                                <p>
-                                    <span>{project?.number}/</span> {project?.[currentLanguage]?.title}
-                                </p>
+                                <span>{project?.number}/</span>
+                                <p>{project?.[currentLanguage]?.title}</p>
                             </Link>
                         </div>
                     ))}

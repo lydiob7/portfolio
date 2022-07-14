@@ -58,7 +58,7 @@ const englishContent = {
             descriptionTwo: ', and musician the rest of the day.'
         },
         contact: {
-            message: 'Say hi,'
+            message: 'Say Hi'
         },
         projects: {
             pageTitle: 'Projects',

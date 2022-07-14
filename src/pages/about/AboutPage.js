@@ -28,8 +28,20 @@ const useStyles = makeStyles((theme) => ({
     },
     eventRow: {
         display: 'grid',
-        gridTemplateColumns: '2fr 5fr 2fr',
-        width: '100%'
+        gridTemplateColumns: '3fr 5fr',
+        gap: '1rem',
+        width: '100%',
+        fontSize: '.8rem',
+        [theme.breakpoints.up('md')]: {
+            gridTemplateColumns: '2fr 5fr 2fr',
+            fontSize: '.9rem'
+        },
+        '&>p:nth-child(3)': {
+            display: 'none',
+            [theme.breakpoints.up('md')]: {
+                display: 'block'
+            }
+        }
     },
     eventsWrapper: {
         display: 'flex',
@@ -49,16 +61,26 @@ const useStyles = makeStyles((theme) => ({
     },
     pageTitle: {
         fontSize: '2rem',
+        marginBottom: '2rem',
+        textTransform: 'uppercase',
         [theme.breakpoints.up('md')]: {
+            marginBottom: '0',
             fontSize: '3rem'
         }
     },
     resumeWrapper: {
-        margin: '0 3rem'
+        margin: '2rem 0 4rem 0',
+        [theme.breakpoints.up('md')]: {
+            margin: '0 3rem'
+        }
     },
     root: {
         paddingTop: '5vh',
-        color: theme.palette.primary.main
+        color: theme.palette.primary.main,
+        paddingBottom: '4rem',
+        [theme.breakpoints.up('md')]: {
+            paddingBottom: '0'
+        }
     }
 }));
 
@@ -81,7 +103,12 @@ const AboutPage = ({ classes, ...props }) => {
                 ))}
             </div>
 
-            <div className={clsx(internalClasses.bottomWrapper, 'flex items-center justify-between')}>
+            <div
+                className={clsx(
+                    internalClasses.bottomWrapper,
+                    'flex flex-col md:flex-row items-center justify-between'
+                )}
+            >
                 <div className={internalClasses.resumeWrapper}>
                     <a href="/resume.pdf" download="Resume Tomas Scattini">
                         {textProvider?.resumeLink}

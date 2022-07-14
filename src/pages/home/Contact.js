@@ -8,13 +8,15 @@ import { GitHub as GitHubIcon, LinkedIn as LinkedInIcon } from '@material-ui/ico
 
 const useStyles = makeStyles((theme) => ({
     mail: {
-        marginBottom: '2rem',
+        margin: '3rem 0 3.5rem 0',
+        fontSize: '1.2rem',
+        textDecoration: 'underline',
         [theme.breakpoints.up('md')]: {
-            fontSize: '2rem',
-            textDecoration: 'underline'
+            fontSize: '2rem'
         }
     },
     message: {
+        fontSize: '1.5rem',
         [theme.breakpoints.up('md')]: {
             fontSize: '3rem'
         }

@@ -1,10 +1,25 @@
 import { createTheme } from '@material-ui/core/styles';
 
-const colorsArray = ['#2A6871', '#F3725C', '#FF9BBF', '#32145D', '#05B18B', '#0E2F56', '#000000'];
+const colorsArray = [
+    // Sunday
+    '#2A6871',
+    // Monday
+    '#F3725C',
+    // Tuesday
+    '#FF9BBF',
+    // Wednesday
+    '#32145D',
+    // Thursday
+    '#05B18B',
+    // Friday
+    '#0E2F56',
+    // Saturday
+    '#000000'
+];
 
-const getRandomColor = () => {
-    const randomIndex = new Date().getDay();
-    return colorsArray[randomIndex];
+const getDayColor = () => {
+    const dayIndex = new Date().getDay();
+    return colorsArray[dayIndex];
 };
 
 export const theme = (color) =>
@@ -12,7 +27,7 @@ export const theme = (color) =>
         palette: {
             type: color,
             primary: {
-                main: getRandomColor(),
+                main: getDayColor(),
                 contrastText: '#FFFFFF'
             }
         },

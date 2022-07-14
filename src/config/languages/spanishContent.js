@@ -58,7 +58,7 @@ const spanishContent = {
             descriptionTwo: ', y músico el resto del día.'
         },
         contact: {
-            message: 'Hablemos,'
+            message: 'Hablemos'
         },
         projects: {
             pageTitle: 'Proyectos',

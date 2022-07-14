@@ -25,9 +25,13 @@ const useStyles = makeStyles((theme) => ({
         '& .image': {
             position: 'relative',
             flexShrink: 0,
-            width: '200px',
-            height: '200px',
+            width: '130px',
+            height: '130px',
             overflow: 'hidden',
+            [theme.breakpoints.up('md')]: {
+                width: '200px',
+                height: '200px'
+            },
             '&:hover::after': {
                 opacity: 0
             },
@@ -55,6 +59,12 @@ const useStyles = makeStyles((theme) => ({
         '& .video': {
             filter: 'grayscale(100%)',
             transition: 'all .3s ease',
+            width: '130px',
+            height: '130px',
+            [theme.breakpoints.up('md')]: {
+                width: '200px',
+                height: '200px'
+            },
             '&:hover': {
                 filter: 'none'
             },
@@ -74,22 +84,35 @@ const useStyles = makeStyles((theme) => ({
             }
         },
         '&>div': {
+            maxWidth: '50vw',
+            [theme.breakpoints.up('sm')]: {
+                maxWidth: '100%'
+            },
             '& .title': {
-                fontSize: '1rem',
+                fontSize: '.8rem',
                 marginBottom: '1rem',
                 fontFamily: 'MonumentExtended-Bold',
+                [theme.breakpoints.up('sm')]: {
+                    fontSize: '1rem'
+                },
                 [theme.breakpoints.up('md')]: {
                     fontSize: '1.2rem'
                 }
             },
             '& .content': {
-                fontSize: '.8rem'
+                fontSize: '.6rem',
+                [theme.breakpoints.up('sm')]: {
+                    fontSize: '.8rem'
+                }
             },
             '& .arrow': {
                 display: 'flex',
                 alignItems: 'center',
-                fontSize: '.8rem',
+                fontSize: '.7rem',
                 margin: '1rem 0',
+                [theme.breakpoints.up('sm')]: {
+                    fontSize: '.8rem'
+                },
                 '& span': {
                     height: '1rem',
                     marginLeft: '1rem',
@@ -172,8 +195,6 @@ const ResultsPage = ({ classes, ...props }) => {
                             {project?.mainVideo && (
                                 <iframe
                                     className="video"
-                                    width="200"
-                                    height="200"
                                     src={project.mainVideo}
                                     title="YouTube video player"
                                     frameborder="0"

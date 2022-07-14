@@ -32,10 +32,14 @@ const skills = [
         id: 'redux',
         title: 'Redux'
     },
-    {
-        id: 'scss',
-        title: 'SCSS/SASS'
-    },
+    // {
+    //     id: 'scss',
+    //     title: 'SCSS/SASS'
+    // },
+    // {
+    //     id: 'wordpress',
+    //     title: 'Wordpress'
+    // },
     {
         id: 'firebase',
         title: 'Firebase'
@@ -45,8 +49,8 @@ const skills = [
         title: 'NodeJS'
     },
     {
-        id: 'wordpress',
-        title: 'Wordpress'
+        id: 'gsap',
+        title: 'GSAP'
     },
     {
         id: 'bass',

@@ -3,6 +3,9 @@
 -   Feature: Add results page.
 -   Feature: Make header responsive.
 -   Feature: Make home banner responsive.
+-   Feature: Make home contact and projects responsive.
+-   Feautre: Make About page responsive.
+-   Feature: Make Results page responsive.
 
 ### v2.1.0
 
