@@ -6,6 +6,7 @@
 -   Feature: Make home contact and projects responsive.
 -   Feautre: Make About page responsive.
 -   Feature: Make Results page responsive.
+-   Feature: Banner animation.
 
 ### v2.1.0
 

@@ -21,12 +21,26 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('md')]: {
             fontSize: '3rem',
             lineHeight: '1'
+        },
+        '&>span': {
+            opacity: 0
+        },
+        '&>span:first-child': {
+            animation: 'fade-in .5s linear forwards'
+        },
+        '&>span:nth-child(2)': {
+            animation: 'fade-in .5s linear 2s forwards'
         }
+    },
+    fadeLast: {
+        opacity: 0,
+        animation: 'fade-in .5s linear 2.2s forwards'
     },
     image: {
         height: 'auto',
         width: '50%',
         overflow: 'hidden',
+        opacity: 0,
         [theme.breakpoints.up('sm')]: {
             height: '300px',
             width: 'auto'
@@ -35,7 +49,11 @@ const useStyles = makeStyles((theme) => ({
             height: '100%'
         }
     },
+    imageOne: {
+        animation: 'fade-in .5s linear .5s forwards'
+    },
     imageTwo: {
+        animation: 'fade-in .5s linear 2s forwards',
         [theme.breakpoints.up('sm')]: {
             position: 'absolute',
             zIndex: 20,
@@ -72,8 +90,8 @@ const Banner = ({ classes, ...props }) => {
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
             <Container maxWidth="md">
                 <p className={internalClasses.description}>
-                    {textProvider?.descriptionOne}
-                    {textProvider?.descriptionTwo}
+                    <span>{textProvider?.descriptionOne}</span>
+                    <span>{textProvider?.descriptionTwo}</span>
                 </p>
                 <div
                     className={clsx(
@@ -89,7 +107,12 @@ const Banner = ({ classes, ...props }) => {
                     </div>
                 </div>
             </Container>
-            <ul className="md:absolute flex md:flex-col justify-center md:justify-between gap-5 md:left-32 md:bottom-40 mt-16 md:mt-auto">
+            <ul
+                className={clsx(
+                    internalClasses.fadeLast,
+                    'md:absolute flex md:flex-col justify-center md:justify-between gap-5 md:left-32 md:bottom-40 mt-16 md:mt-auto'
+                )}
+            >
                 <li>
                     <a href="https://github.com/lydiob7" target="_blank" rel="noreferrer">
                         <GitHubIcon fontSize="large" />
@@ -107,7 +130,13 @@ const Banner = ({ classes, ...props }) => {
                 </li>
             </ul>
 
-            <div className={clsx(internalClasses.languagesSwitch, 'absolute flex flex-col justify-between w-20')}>
+            <div
+                className={clsx(
+                    internalClasses.languagesSwitch,
+                    internalClasses.fadeLast,
+                    'absolute flex flex-col justify-between w-20'
+                )}
+            >
                 <Button
                     onClick={() => dispatch(languageChanged('en'))}
                     variant="text"

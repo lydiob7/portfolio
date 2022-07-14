@@ -39,7 +39,7 @@ class Projects {
             id: getRandomId(),
             skills: ['javascript', 'react', 'styled-components', 'html', 'css', 'heroku', 'node', 'express', 'api'],
             mainImage: tomiScattiniOldMainImage,
-            websiteUrl: 'https://www.tomiscattini.com/',
+            websiteUrl: 'https://www.tomiscattini.com/v1/',
             githubRepo: 'https://github.com/lydiob7/portfolio_old',
             en: {
                 title: 'Tomi Scattini - Old Portfolio',
