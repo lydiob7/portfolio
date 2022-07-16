@@ -114,10 +114,10 @@ const Banner = ({ classes, ...props }) => {
                     )}
                 >
                     <div className={clsx(internalClasses.image, internalClasses.imageOne, 'translate-y-[-2rem]')}>
-                        <img src={banner1} alt="Tomi on a cafe in Catania" />
+                        <img src={banner1} alt="Tomi on a cafe in Catania. Photo: Gabi Polanco" />
                     </div>
                     <div className={clsx(internalClasses.image, internalClasses.imageTwo)}>
-                        <img src={banner2} alt="Tomi playing bass in NYC" />
+                        <img src={banner2} alt="Tomi playing bass in NYC. Photo: Javier Lopez Montoya" />
                     </div>
                 </div>
             </Container>

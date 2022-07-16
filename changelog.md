@@ -1,3 +1,8 @@
+### v2.3.0
+
+-   Feature: Add credits.
+-   Update: Translate master degree on about page.
+
 ### v2.2.3
 
 -   Update: Display go back arrow on internal pages.

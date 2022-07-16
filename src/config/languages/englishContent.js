@@ -32,7 +32,7 @@ const englishContent = {
             },
             {
                 year: '2017',
-                content: 'Licenciatura musica popular',
+                content: 'Master in Popular Music',
                 status: 'Graduated'
             },
             {
@@ -58,7 +58,9 @@ const englishContent = {
             descriptionTwo: ', and musician the rest of the day.'
         },
         contact: {
-            message: 'Say Hi'
+            message: 'Say Hi',
+            designBy: 'Designed by',
+            secondPictureCredits: 'The second Photography on landing page was taken by'
         },
         projects: {
             pageTitle: 'Projects',

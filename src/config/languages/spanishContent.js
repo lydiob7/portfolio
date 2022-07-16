@@ -58,7 +58,9 @@ const spanishContent = {
             descriptionTwo: ', y músico el resto del día.'
         },
         contact: {
-            message: 'Hablemos'
+            message: 'Hablemos',
+            designBy: 'Diseñado por',
+            secondPictureCredits: 'La segunda foto de la portada fue tomada por'
         },
         projects: {
             pageTitle: 'Proyectos',
