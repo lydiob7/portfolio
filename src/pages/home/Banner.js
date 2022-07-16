@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
             animation: 'fade-in .5s linear 2s forwards'
         }
     },
-    fadeLast: {
+    fadeIn: {
         opacity: 0,
-        animation: 'fade-in .5s linear 2.2s forwards'
+        animation: 'fade-in .5s linear .5s forwards'
     },
     image: {
         height: '55vw',
@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     languagesSwitch: {
-        top: '30%',
+        top: '230px',
         [theme.breakpoints.up('sm')]: {
             top: '20%'
         },
@@ -114,16 +114,16 @@ const Banner = ({ classes, ...props }) => {
                     )}
                 >
                     <div className={clsx(internalClasses.image, internalClasses.imageOne, 'translate-y-[-2rem]')}>
-                        <img src={banner1} alt="Tomi on a cafe in Catania. Photo: Gabi Polanco" />
+                        <img src={banner1} alt="Tomi on a cafe in Catania. Taken by: Gabi Polanco" />
                     </div>
                     <div className={clsx(internalClasses.image, internalClasses.imageTwo)}>
-                        <img src={banner2} alt="Tomi playing bass in NYC. Photo: Javier Lopez Montoya" />
+                        <img src={banner2} alt="Tomi playing bass in NYC. Taken by: Javier Lopez Montoya" />
                     </div>
                 </div>
             </Container>
             <ul
                 className={clsx(
-                    internalClasses.fadeLast,
+                    internalClasses.fadeIn,
                     'md:absolute flex md:flex-col justify-center md:justify-between gap-5 md:left-32 md:bottom-40 mt-16 md:mt-auto'
                 )}
             >
@@ -147,7 +147,7 @@ const Banner = ({ classes, ...props }) => {
             <div
                 className={clsx(
                     internalClasses.languagesSwitch,
-                    internalClasses.fadeLast,
+                    internalClasses.fadeIn,
                     'absolute flex flex-col justify-between w-20'
                 )}
             >

@@ -45,15 +45,23 @@ const useStyles = makeStyles((theme) => ({
             '&>div': {
                 display: 'flex',
                 justifyContent: 'center',
-                '&>span': {
-                    width: '10px',
-                    height: '10px',
-                    borderRadius: '100%',
-                    border: `2px solid ${theme.palette.primary.main}`,
-                    margin: '0 1rem',
-                    cursor: 'pointer',
-                    '&.fill': {
-                        backgroundColor: theme.palette.primary.main
+                '&>div': {
+                    width: '100%',
+                    minHeight: '40px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '0 1rem',
+                    '&>span': {
+                        flexShrink: 0,
+                        width: '10px',
+                        height: '10px',
+                        borderRadius: '100%',
+                        border: `2px solid ${theme.palette.primary.main}`,
+                        cursor: 'pointer',
+                        '&.fill': {
+                            backgroundColor: theme.palette.primary.main
+                        }
                     }
                 }
             }
@@ -194,11 +202,9 @@ const Skills = forwardRef(({ classes, ...props }, ref) => {
             <div className="dots">
                 <div>
                     {chunkanizedSkills?.map((chunk, index) => (
-                        <span
-                            onClick={() => handleGroupsScroll(index)}
-                            className={visibleSkillGroup === index ? 'fill' : ''}
-                            key={getRandomId()}
-                        ></span>
+                        <div onClick={() => handleGroupsScroll(index)} key={getRandomId()}>
+                            <span className={visibleSkillGroup === index ? 'fill' : ''}></span>
+                        </div>
                     ))}
                 </div>
             </div>

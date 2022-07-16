@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         gap: '3rem',
-        paddingTop: '7vh',
+        paddingTop: '9vh',
         paddingBottom: '20vh',
         minHeight: 'calc(100vh - 80px)',
         [theme.breakpoints.up('md')]: {
@@ -150,15 +150,23 @@ const useStyles = makeStyles((theme) => ({
             '&>div': {
                 display: 'flex',
                 justifyContent: 'center',
-                '&>span': {
-                    width: '10px',
-                    height: '10px',
-                    borderRadius: '100%',
-                    border: `2px solid ${theme.palette.primary.main}`,
-                    margin: '0 1rem',
-                    cursor: 'pointer',
-                    '&.fill': {
-                        backgroundColor: theme.palette.primary.main
+                '&>div': {
+                    width: '100%',
+                    minHeight: '40px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '0 1rem',
+                    '&>span': {
+                        flexShrink: 0,
+                        width: '10px',
+                        height: '10px',
+                        borderRadius: '100%',
+                        border: `2px solid ${theme.palette.primary.main}`,
+                        cursor: 'pointer',
+                        '&.fill': {
+                            backgroundColor: theme.palette.primary.main
+                        }
                     }
                 }
             }
@@ -230,7 +238,7 @@ const ProjectPage = ({ classes, ...props }) => {
 
     return (
         <Container maxWidth="lg" className={clsx(internalClasses.root, classes?.root)} {...props}>
-            <div className="absolute z-20 top-1 left-2 lg:-left-6">
+            <div className="absolute z-20 top-4 left-2 lg:-left-6">
                 <ArrowBack />
             </div>
             <div className="left-side">
@@ -275,22 +283,18 @@ const ProjectPage = ({ classes, ...props }) => {
             </div>
             <div className="dots">
                 <div>
-                    <span
-                        onClick={() => handleGroupsScroll(0)}
-                        className={visibleSkillGroup === 0 ? 'fill' : ''}
-                    ></span>
-                    <span
-                        onClick={() => handleGroupsScroll(1)}
-                        className={visibleSkillGroup === 1 ? 'fill' : ''}
-                    ></span>
-                    <span
-                        onClick={() => handleGroupsScroll(2)}
-                        className={visibleSkillGroup === 2 ? 'fill' : ''}
-                    ></span>
-                    <span
-                        onClick={() => handleGroupsScroll(3)}
-                        className={visibleSkillGroup === 3 ? 'fill' : ''}
-                    ></span>
+                    <div onClick={() => handleGroupsScroll(0)}>
+                        <span className={visibleSkillGroup === 0 ? 'fill' : ''}></span>
+                    </div>
+                    <div onClick={() => handleGroupsScroll(1)}>
+                        <span className={visibleSkillGroup === 1 ? 'fill' : ''}></span>
+                    </div>
+                    <div onClick={() => handleGroupsScroll(2)}>
+                        <span className={visibleSkillGroup === 2 ? 'fill' : ''}></span>
+                    </div>
+                    <div onClick={() => handleGroupsScroll(3)}>
+                        <span className={visibleSkillGroup === 3 ? 'fill' : ''}></span>
+                    </div>
                 </div>
             </div>
 

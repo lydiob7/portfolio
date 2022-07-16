@@ -77,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         position: 'relative',
-        paddingTop: '7vh',
+        paddingTop: '9vh',
         color: theme.palette.primary.main,
         paddingBottom: '4rem',
         [theme.breakpoints.up('md')]: {
@@ -106,7 +106,7 @@ const AboutPage = ({ classes, ...props }) => {
 
     return (
         <Container maxWidth="lg" className={clsx(internalClasses.root, classes?.root)} {...props}>
-            <div className="absolute z-20 top-1 left-2 lg:-left-6">
+            <div className="absolute z-20 top-4 left-2 lg:-left-6">
                 <ArrowBack />
             </div>
             <h2 className={clsx(internalClasses.pageTitle, 'font-primary')}>{textProvider?.pageTitle}</h2>

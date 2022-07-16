@@ -1,3 +1,8 @@
+### v2.3.1
+
+-   Update: Move a little bit down the language switch.
+-   Update: Give more space to click dots.
+
 ### v2.3.0
 
 -   Feature: Add credits.
