@@ -128,7 +128,8 @@ const Skills = forwardRef(({ classes, ...props }, ref) => {
     }, [skills]);
 
     useEffect(() => {
-        scrollAreaRef?.current?.addEventListener('scroll', (ev) => {
+        const scrollAreaVariable = scrollAreaRef?.current;
+        scrollAreaVariable?.addEventListener('scroll', (ev) => {
             const firstGroupLeft = firstSkillGroup?.current.getBoundingClientRect()?.left;
             const secondGroupLeft = secondSkillGroup?.current.getBoundingClientRect()?.left;
             const thirdGroupLeft = thirdSkillGroup?.current.getBoundingClientRect()?.left;
@@ -139,6 +140,8 @@ const Skills = forwardRef(({ classes, ...props }, ref) => {
             else if (thirdGroupLeft >= 0) setVisibleSkillGroup(2);
             else if (fourthGroupLeft >= 0) setVisibleSkillGroup(3);
         });
+
+        return () => scrollAreaVariable?.removeEventListener('scroll', () => {});
     }, []);
 
     const handleCheckSkill = (event) => {

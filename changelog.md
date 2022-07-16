@@ -1,3 +1,7 @@
+### v2.2.1
+
+-   Bugfix: Fix inverted header on internal pages.
+
 ### v2.2.0
 
 -   Feature: Add results page.

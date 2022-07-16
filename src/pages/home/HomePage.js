@@ -1,5 +1,6 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import { setInvertedHeader, setNormalHeader } from 'store/uiSlice';
 import clsx from 'clsx';
 
@@ -19,8 +20,11 @@ const useStyles = makeStyles((theme) => ({
 const HomePage = ({ classes, ...props }) => {
     const internalClasses = useStyles();
     const dispatch = useDispatch();
+    const location = useLocation();
 
     const skillsRef = useRef(null);
+
+    const [isHeaderInverted, setIsHeaderInverted] = useState(false);
 
     useLayoutEffect(() => {
         dispatch(setNormalHeader());
@@ -29,10 +33,18 @@ const HomePage = ({ classes, ...props }) => {
     useEffect(() => {
         document?.addEventListener('scroll', () => {
             const skillsRect = skillsRef?.current?.getBoundingClientRect();
-            if (skillsRect?.top <= 80 && skillsRect?.top - 80 > -skillsRect?.height) dispatch(setInvertedHeader());
-            else dispatch(setNormalHeader());
+            if (!location?.pathname === '/') return;
+            if (skillsRect?.top <= 80 && skillsRect?.top - 80 > -skillsRect?.height) return setIsHeaderInverted(true);
+            else return setIsHeaderInverted(false);
         });
-    }, [dispatch]);
+
+        return () => document.removeEventListener('scroll', () => {});
+    }, [dispatch, location?.pathname]);
+
+    useEffect(() => {
+        if (isHeaderInverted) dispatch(setInvertedHeader());
+        else dispatch(setNormalHeader());
+    }, [dispatch, isHeaderInverted]);
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>

@@ -178,21 +178,24 @@ const ProjectPage = ({ classes, ...props }) => {
     }, [dispatch]);
 
     useEffect(() => {
-        window.scroll(0, 0);
-    }, []);
-
-    useEffect(() => {
         dispatch(resetState());
 
         return () => dispatch(resetState());
     }, [dispatch]);
 
     useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+        handleGroupsScroll(0);
         if (id) dispatch(setProject(id));
     }, [dispatch, id]);
 
     useEffect(() => {
-        scrollAreaRef?.current?.addEventListener('scroll', (ev) => {
+        const scrollAreaVariable = scrollAreaRef?.current;
+        scrollAreaVariable?.addEventListener('scroll', (ev) => {
             const firstGroupLeft = firstSkillGroup?.current.getBoundingClientRect()?.left;
             const secondGroupLeft = secondSkillGroup?.current.getBoundingClientRect()?.left;
             const thirdGroupLeft = thirdSkillGroup?.current.getBoundingClientRect()?.left;
@@ -203,6 +206,8 @@ const ProjectPage = ({ classes, ...props }) => {
             else if (thirdGroupLeft >= 0) setVisibleSkillGroup(2);
             else if (fourthGroupLeft >= 0) setVisibleSkillGroup(3);
         });
+
+        return () => scrollAreaVariable?.removeEventListener('scroll', () => {});
     }, []);
 
     const handleGroupsScroll = (index) => {
