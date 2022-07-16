@@ -12,6 +12,7 @@
 -   Feature: Change color of header on skills section of home page.
 -   Feature: Use dots to move through skill on home page on mobile.
 -   Feature: Use dots to move through sections on project page on mobile.
+-   Feature: Add README.
 
 ### v2.1.0
 

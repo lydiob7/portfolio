@@ -32,7 +32,7 @@ const HomePage = ({ classes, ...props }) => {
             if (skillsRect?.top <= 80 && skillsRect?.top - 80 > -skillsRect?.height) dispatch(setInvertedHeader());
             else dispatch(setNormalHeader());
         });
-    }, []);
+    }, [dispatch]);
 
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
