@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import { setInvertedHeader } from 'store/uiSlice';
@@ -147,6 +147,7 @@ const useStyles = makeStyles((theme) => ({
                     borderRadius: '100%',
                     border: `2px solid ${theme.palette.primary.main}`,
                     margin: '0 1rem',
+                    cursor: 'pointer',
                     '&.fill': {
                         backgroundColor: theme.palette.primary.main
                     }
@@ -161,12 +162,24 @@ const ProjectPage = ({ classes, ...props }) => {
     const dispatch = useDispatch();
     const { id } = useParams();
 
+    const [visibleSkillGroup, setVisibleSkillGroup] = useState(0);
+
+    const scrollAreaRef = useRef(null);
+    const firstSkillGroup = useRef(null);
+    const secondSkillGroup = useRef(null);
+    const thirdSkillGroup = useRef(null);
+    const fourthSkillGroup = useRef(null);
+
     const currentProject = useSelector(({ entities }) => entities?.projects?.currentProject);
     const textProvider = useSelector(({ ui }) => ui.textContent?.projectPage);
 
     useLayoutEffect(() => {
         dispatch(setInvertedHeader());
     }, [dispatch]);
+
+    useEffect(() => {
+        window.scroll(0, 0);
+    }, []);
 
     useEffect(() => {
         dispatch(resetState());
@@ -178,6 +191,29 @@ const ProjectPage = ({ classes, ...props }) => {
         if (id) dispatch(setProject(id));
     }, [dispatch, id]);
 
+    useEffect(() => {
+        scrollAreaRef?.current?.addEventListener('scroll', (ev) => {
+            const firstGroupLeft = firstSkillGroup?.current.getBoundingClientRect()?.left;
+            const secondGroupLeft = secondSkillGroup?.current.getBoundingClientRect()?.left;
+            const thirdGroupLeft = thirdSkillGroup?.current.getBoundingClientRect()?.left;
+            const fourthGroupLeft = fourthSkillGroup?.current.getBoundingClientRect()?.left;
+
+            if (firstGroupLeft >= 0) setVisibleSkillGroup(0);
+            else if (secondGroupLeft >= 0) setVisibleSkillGroup(1);
+            else if (thirdGroupLeft >= 0) setVisibleSkillGroup(2);
+            else if (fourthGroupLeft >= 0) setVisibleSkillGroup(3);
+        });
+    }, []);
+
+    const handleGroupsScroll = (index) => {
+        if (scrollAreaRef?.current) {
+            const scrollAreaWidth = scrollAreaRef.current.getBoundingClientRect().width;
+            const groupLeftOptions = [6, scrollAreaWidth * 1 + 6, scrollAreaWidth * 2 + 6, scrollAreaWidth * 3 + 6];
+
+            scrollAreaRef.current.scroll(groupLeftOptions[index], 0);
+        }
+    };
+
     return (
         <Container maxWidth="lg" className={clsx(internalClasses.root, classes?.root)} {...props}>
             <div className="left-side">
@@ -186,8 +222,8 @@ const ProjectPage = ({ classes, ...props }) => {
                     <img src={currentProject?.mainImage} alt={currentProject?.data?.title} />
                 </a>
             </div>
-            <div className="right-side">
-                <div id="1" className="section">
+            <div ref={scrollAreaRef} className="right-side">
+                <div ref={firstSkillGroup} id="1" className="section">
                     <p className="number">01</p>
                     <h3 className="title">{textProvider?.aboutTitle}</h3>
                     <ul className="content">
@@ -196,7 +232,7 @@ const ProjectPage = ({ classes, ...props }) => {
                         ))}
                     </ul>
                 </div>
-                <div id="2" className="section">
+                <div ref={secondSkillGroup} id="2" className="section">
                     <p className="number">02</p>
                     <h3 className="title">{textProvider?.technologiesTitle}</h3>
                     <ul className="content">
@@ -205,14 +241,14 @@ const ProjectPage = ({ classes, ...props }) => {
                         ))}
                     </ul>
                 </div>
-                <div id="3" className="section">
+                <div ref={thirdSkillGroup} id="3" className="section">
                     <p className="number">03</p>
                     <h3 className="title">{textProvider?.codeTitle}</h3>
                     <a href={currentProject?.githubRepo} target="_blank" rel="noreferrer">
                         {textProvider?.repoLink}
                     </a>
                 </div>
-                <div id="4" className="section">
+                <div ref={fourthSkillGroup} id="4" className="section">
                     <p className="number">04</p>
                     <h3 className="title">{textProvider?.liveTitle}</h3>
                     <a href={currentProject?.websiteUrl} target="_blank" rel="noreferrer">
@@ -222,10 +258,22 @@ const ProjectPage = ({ classes, ...props }) => {
             </div>
             <div className="dots">
                 <div>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                    <span
+                        onClick={() => handleGroupsScroll(0)}
+                        className={visibleSkillGroup === 0 ? 'fill' : ''}
+                    ></span>
+                    <span
+                        onClick={() => handleGroupsScroll(1)}
+                        className={visibleSkillGroup === 1 ? 'fill' : ''}
+                    ></span>
+                    <span
+                        onClick={() => handleGroupsScroll(2)}
+                        className={visibleSkillGroup === 2 ? 'fill' : ''}
+                    ></span>
+                    <span
+                        onClick={() => handleGroupsScroll(3)}
+                        className={visibleSkillGroup === 3 ? 'fill' : ''}
+                    ></span>
                 </div>
             </div>
 

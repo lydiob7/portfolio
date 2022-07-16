@@ -1,6 +1,6 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { setNormalHeader } from 'store/uiSlice';
+import { setInvertedHeader, setNormalHeader } from 'store/uiSlice';
 import clsx from 'clsx';
 
 import { makeStyles } from '@material-ui/core';
@@ -20,14 +20,24 @@ const HomePage = ({ classes, ...props }) => {
     const internalClasses = useStyles();
     const dispatch = useDispatch();
 
+    const skillsRef = useRef(null);
+
     useLayoutEffect(() => {
         dispatch(setNormalHeader());
     }, [dispatch]);
 
+    useEffect(() => {
+        document?.addEventListener('scroll', () => {
+            const skillsRect = skillsRef?.current?.getBoundingClientRect();
+            if (skillsRect?.top <= 80 && skillsRect?.top - 80 > -skillsRect?.height) dispatch(setInvertedHeader());
+            else dispatch(setNormalHeader());
+        });
+    }, []);
+
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
             <Banner />
-            <Skills />
+            <Skills ref={skillsRef} />
             <Projects />
             <Contact />
         </div>

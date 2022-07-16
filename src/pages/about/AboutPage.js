@@ -1,4 +1,4 @@
-import React, { useLayoutEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { setInvertedHeader } from 'store/uiSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
@@ -93,6 +93,10 @@ const AboutPage = ({ classes, ...props }) => {
     useLayoutEffect(() => {
         dispatch(setInvertedHeader());
     }, [dispatch]);
+
+    useEffect(() => {
+        window.scroll(0, 0);
+    }, []);
 
     return (
         <Container maxWidth="lg" className={clsx(internalClasses.root, classes?.root)} {...props}>

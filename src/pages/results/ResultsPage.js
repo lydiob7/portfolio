@@ -177,7 +177,7 @@ const ResultsPage = ({ classes, ...props }) => {
                     {skillsFromParams?.split(',')?.map((skill, index) => {
                         const skillObject = skills?.filter((skill2) => skill2?.id === skill)?.[0];
                         return (
-                            <React.Fragment key={skill?.id}>
+                            <React.Fragment key={skill}>
                                 {index !== 0 && ' - '}
                                 {skillObject?.title || skillObject?.[currentLanguage]?.title}
                             </React.Fragment>
@@ -197,7 +197,7 @@ const ResultsPage = ({ classes, ...props }) => {
                                     className="video"
                                     src={project.mainVideo}
                                     title="YouTube video player"
-                                    frameborder="0"
+                                    frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowFullScreen
                                 ></iframe>
