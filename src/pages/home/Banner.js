@@ -37,16 +37,25 @@ const useStyles = makeStyles((theme) => ({
         animation: 'fade-in .5s linear 2.2s forwards'
     },
     image: {
-        height: 'auto',
-        width: '50%',
+        height: '55vw',
+        width: 'calc(50vw - 16px)',
         overflow: 'hidden',
         opacity: 0,
         [theme.breakpoints.up('sm')]: {
+            height: '350px',
+            width: '280px'
+        },
+        [theme.breakpoints.up('md')]: {
             height: '300px',
             width: 'auto'
         },
         '& img': {
-            height: '100%'
+            width: '100%',
+            objectFit: 'cover',
+            [theme.breakpoints.up('sm')]: {
+                height: '100%',
+                width: 'auto'
+            }
         }
     },
     imageOne: {
@@ -57,13 +66,18 @@ const useStyles = makeStyles((theme) => ({
         [theme.breakpoints.up('sm')]: {
             position: 'absolute',
             zIndex: 20,
-            right: '6rem'
+            right: '0',
+            top: '1rem'
+        },
+        [theme.breakpoints.up('md')]: {
+            right: '6rem',
+            top: 0
         }
     },
     languagesSwitch: {
         top: '30%',
         [theme.breakpoints.up('sm')]: {
-            top: '25%'
+            top: '20%'
         },
         right: '10vw',
         [theme.breakpoints.up('md')]: {

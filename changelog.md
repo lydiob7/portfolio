@@ -1,3 +1,7 @@
+### v2.2.2
+
+-   Bugfix: Fix banner images size.
+
 ### v2.2.1
 
 -   Bugfix: Fix inverted header on internal pages.
