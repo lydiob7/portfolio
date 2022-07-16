@@ -1,6 +1,6 @@
 {
     "name": "tomi-scattini-portfolio",
-    "version": "2.2.1",
+    "version": "2.2.3",
     "private": true,
     "dependencies": {
         "@craco/craco": "^6.4.4",

@@ -193,9 +193,9 @@ const spanishContent = {
         technologiesTitle: 'Tecnologías',
         codeTitle: 'Mirá el código',
         liveTitle: 'Proyecto en vivo',
-        repoLink: 'link github',
+        repoLink: 'Link github',
         seeAll: 'Ver Todo',
-        websiteLink: 'link website'
+        websiteLink: 'Link website'
     },
     resultsPage: {
         pageTitle: 'Resultados',

@@ -6,6 +6,7 @@ import clsx from 'clsx';
 import { Button, Container, makeStyles } from '@material-ui/core';
 
 import { GetApp as GetAppIcon } from '@material-ui/icons';
+import ArrowBack from 'components/common/ArrowBack';
 
 const useStyles = makeStyles((theme) => ({
     bottomWrapper: {
@@ -75,7 +76,8 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     root: {
-        paddingTop: '5vh',
+        position: 'relative',
+        paddingTop: '7vh',
         color: theme.palette.primary.main,
         paddingBottom: '4rem',
         [theme.breakpoints.up('md')]: {
@@ -104,6 +106,9 @@ const AboutPage = ({ classes, ...props }) => {
 
     return (
         <Container maxWidth="lg" className={clsx(internalClasses.root, classes?.root)} {...props}>
+            <div className="absolute z-20 top-1 left-2 lg:-left-6">
+                <ArrowBack />
+            </div>
             <h2 className={clsx(internalClasses.pageTitle, 'font-primary')}>{textProvider?.pageTitle}</h2>
             <div className={internalClasses.contentWrapper}>
                 {textProvider?.bio?.map((paragraph) => (

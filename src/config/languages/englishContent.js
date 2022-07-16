@@ -192,9 +192,9 @@ const englishContent = {
         technologiesTitle: 'Technologies',
         codeTitle: 'Check the code',
         liveTitle: 'Live project',
-        repoLink: 'github link',
+        repoLink: 'Github link',
         seeAll: 'See All',
-        websiteLink: 'website link'
+        websiteLink: 'Website link'
     },
     resultsPage: {
         pageTitle: 'Results',

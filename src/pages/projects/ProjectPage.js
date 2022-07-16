@@ -9,6 +9,7 @@ import clsx from 'clsx';
 import { Container, IconButton, makeStyles } from '@material-ui/core';
 
 import { ArrowBack as ArrowBackIcon, ArrowForward as ArrowForwardIcon } from '@material-ui/icons';
+import ArrowBack from 'components/common/ArrowBack';
 
 const useStyles = makeStyles((theme) => ({
     arrow: {
@@ -63,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         gap: '3rem',
-        paddingTop: '5vh',
+        paddingTop: '7vh',
         paddingBottom: '20vh',
         minHeight: 'calc(100vh - 80px)',
         [theme.breakpoints.up('md')]: {
@@ -103,7 +104,9 @@ const useStyles = makeStyles((theme) => ({
                 flexShrink: 0,
                 scrollSnapAlign: 'start',
                 scrollSnapStop: 'always',
+                padding: '0 1.5rem',
                 [theme.breakpoints.up('md')]: {
+                    padding: '0',
                     width: 'auto'
                 },
                 '& .number': {
@@ -117,14 +120,20 @@ const useStyles = makeStyles((theme) => ({
                 },
                 '& .title': {
                     fontFamily: theme.typography.h1.fontFamily,
+                    marginBottom: '1rem',
                     [theme.breakpoints.up('md')]: {
+                        marginBottom: '0',
                         fontSize: '1.2rem'
                     }
                 },
                 '& .content': {
                     '& li': {
                         margin: '.5rem 0',
-                        listStyle: 'disc'
+                        listStyle: 'disc',
+                        fontSize: '.8rem',
+                        [theme.breakpoints.up('md')]: {
+                            fontSize: '.9rem'
+                        }
                     }
                 }
             }
@@ -221,6 +230,9 @@ const ProjectPage = ({ classes, ...props }) => {
 
     return (
         <Container maxWidth="lg" className={clsx(internalClasses.root, classes?.root)} {...props}>
+            <div className="absolute z-20 top-1 left-2 lg:-left-6">
+                <ArrowBack />
+            </div>
             <div className="left-side">
                 <h2>{currentProject?.data?.title}</h2>
                 <a href={currentProject?.websiteUrl} target="_blank" rel="noreferrer" className={internalClasses.image}>

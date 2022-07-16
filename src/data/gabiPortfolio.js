@@ -13,7 +13,7 @@ const gabiPortfolio = {
         title: 'UX UI Designer Portfolio',
         about: [
             'Structured to display any number of future projects.',
-            'Based on a personal template (https://tstemplateui.netlify.app/ )',
+            'Based on a personal template (https://tstemplateui.netlify.app/)',
             'Developed a system to cater for posts with different media types and text styles.'
         ],
         technologies: ['React', 'MaterialUI', 'Redux']
@@ -22,7 +22,7 @@ const gabiPortfolio = {
         title: 'Portfolio de diseñadora UX UI',
         about: [
             'Estructurado para mostrar cualquier número de futuros proyectos.',
-            'Basado en un template personal (https://tstemplateui.netlify.app/ )',
+            'Basado en un template personal (https://tstemplateui.netlify.app/)',
             'Desarrollado un sistema para aceptar posts con diferentes tipos de media y estilos de texto.'
         ],
         technologies: ['React', 'MaterialUI', 'Redux']

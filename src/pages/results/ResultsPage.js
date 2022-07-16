@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import clsx from 'clsx';
 
 import { Container, makeStyles } from '@material-ui/core';
+import ArrowBack from 'components/common/ArrowBack';
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -134,7 +135,10 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         color: theme.palette.primary.main,
-        padding: '5vh 0'
+        padding: '5vh 0',
+        '&>div': {
+            position: 'relative'
+        }
     }
 }));
 
@@ -172,6 +176,9 @@ const ResultsPage = ({ classes, ...props }) => {
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
             <Container maxWidth="lg">
+                <div className="absolute z-20 top-1 left-2 lg:-left-6">
+                    <ArrowBack />
+                </div>
                 <h2 className={internalClasses.pageTitle}>{textProvider?.pageTitle}</h2>
                 <p className="text-center">
                     {skillsFromParams?.split(',')?.map((skill, index) => {

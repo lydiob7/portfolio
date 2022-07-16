@@ -1,3 +1,7 @@
+### v2.2.3
+
+-   Update: Display go back arrow on internal pages.
+
 ### v2.2.2
 
 -   Bugfix: Fix banner images size.
