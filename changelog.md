@@ -1,3 +1,7 @@
+### v2.4.0
+
+-   Feature: Add bio on home page.
+
 ### v2.3.1
 
 -   Update: Move a little bit down the language switch.

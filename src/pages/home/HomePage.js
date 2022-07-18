@@ -6,6 +6,7 @@ import clsx from 'clsx';
 
 import { makeStyles } from '@material-ui/core';
 
+import About from './About';
 import Banner from './Banner';
 import Skills from './Skills';
 import Projects from './Projects';
@@ -22,6 +23,7 @@ const HomePage = ({ classes, ...props }) => {
     const dispatch = useDispatch();
     const location = useLocation();
 
+    const aboutRef = useRef(null);
     const skillsRef = useRef(null);
 
     const [isHeaderInverted, setIsHeaderInverted] = useState(false);
@@ -32,9 +34,10 @@ const HomePage = ({ classes, ...props }) => {
 
     useEffect(() => {
         document?.addEventListener('scroll', () => {
+            const aboutRect = aboutRef?.current?.getBoundingClientRect();
             const skillsRect = skillsRef?.current?.getBoundingClientRect();
             if (!location?.pathname === '/') return;
-            if (skillsRect?.top <= 80 && skillsRect?.top - 80 > -skillsRect?.height) return setIsHeaderInverted(true);
+            if (aboutRect?.top <= 80 && skillsRect?.top - 80 > -skillsRect?.height) return setIsHeaderInverted(true);
             else return setIsHeaderInverted(false);
         });
 
@@ -49,6 +52,7 @@ const HomePage = ({ classes, ...props }) => {
     return (
         <div className={clsx(internalClasses.root, classes?.root)} {...props}>
             <Banner />
+            <About ref={aboutRef} />
             <Skills ref={skillsRef} />
             <Projects />
             <Contact />

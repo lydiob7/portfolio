@@ -1,20 +1,20 @@
 import { createTheme } from '@material-ui/core/styles';
 
 const colorsArray = [
-    // Sunday
-    '#2A6871',
-    // Monday
-    '#F3725C',
-    // Tuesday
+    // Sunday - Pink
     '#FF9BBF',
-    // Wednesday
+    // Monday - Black
+    '#000000',
+    // Tuesday - Orange
+    '#F3725C',
+    // Wednesday - Purple
     '#32145D',
-    // Thursday
+    // Thursday - Green
     '#05B18B',
-    // Friday
+    // Friday - Blue
     '#0E2F56',
-    // Saturday
-    '#000000'
+    // Saturday - Ocean blue
+    '#2A6871'
 ];
 
 const getDayColor = () => {

@@ -16,7 +16,7 @@ const spanishContent = {
         skipNavigationAnchor: 'Saltar navegación'
     },
     aboutPage: {
-        pageTitle: 'Acerca',
+        pageTitle: 'Sobre mí',
         bio: [
             'Soy Desarrollador Full Stack Italo-Argentino (internacional) con un background en Música Popular. Entusiasta de las tecnologías web, aprender nuevas habilidades, y encontrar nuevas maneras creativas de solucionar problemas.',
             'Trabajé como profesor de música en mi país natal por cinco años hasta que mis ansias de aventura me hicieron decidir abrir nuevos caminor y viajar alrededor del mundo. Trabajando como profesor aprendí a ser parte de un equipo interdisciplinar. Viajar me ayudó a adquirir la confianza necesaria para adaptarme rápidamente a diferentes situaciones. ',
@@ -137,7 +137,7 @@ const spanishContent = {
     },
     navigationMenu: {
         work: 'Trabajos',
-        about: 'Acerca',
+        about: 'Sobre mí',
         contact: 'Contacto',
         letsTalk: 'Hablemos'
     },
