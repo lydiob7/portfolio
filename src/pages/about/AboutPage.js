@@ -111,8 +111,17 @@ const AboutPage = ({ classes, ...props }) => {
             </div>
             <h2 className={clsx(internalClasses.pageTitle, 'font-primary')}>{textProvider?.pageTitle}</h2>
             <div className={internalClasses.contentWrapper}>
-                {textProvider?.bio?.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
+                {textProvider?.bio?.map((paragraph, i) => (
+                    <p key={paragraph}>
+                        {paragraph}{' '}
+                        {i === 0 ? (
+                            <a href="https://smartstudios.io" target="_blank" rel="noreferrer">
+                                Smart Studios
+                            </a>
+                        ) : (
+                            ''
+                        )}
+                    </p>
                 ))}
             </div>
 

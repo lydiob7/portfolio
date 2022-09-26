@@ -1,3 +1,9 @@
+### v2.5.0
+
+-   Update: Update bio.
+-   Feature: Add miguel bruno project.
+-   Update: Add subtitle to skills section on main page and make results button contained.
+
 ### v2.4.0
 
 -   Feature: Add bio on home page.

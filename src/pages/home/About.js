@@ -60,7 +60,12 @@ const About = forwardRef(({ classes, ...props }, ref) => {
             <Container maxWidth="md">
                 <h2 className={clsx(internalClasses.pageTitle, 'font-primary')}>{textProvider?.pageTitle}</h2>
 
-                <p className={internalClasses.bio}>{textProvider?.bio?.[0]}</p>
+                <p className={internalClasses.bio}>
+                    {textProvider?.bio?.[0]}{' '}
+                    <a href="https://smartstudios.io" target="_blank" rel="noreferrer">
+                        Smart Studios
+                    </a>
+                </p>
 
                 <div className={internalClasses.resumeWrapper}>
                     <a href="/resume.pdf" download="Resume Tomas Scattini">

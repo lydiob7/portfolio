@@ -4,7 +4,7 @@ const gabiPortfolio = {
     number: '01',
     id: 'gabi-portfolio',
     featured: true,
-    skills: ['javascript', 'react', 'redux', 'materialui', 'html', 'css', 'tailwind'],
+    skills: ['javascript', 'react', 'redux', 'materialui', 'html', 'css', 'tailwind', 'gsap'],
     mainImage,
     websiteUrl: 'https://gabrielapolancoferreyra.com/',
     githubRepo: 'https://github.com/lydiob7/gabi-portfolio',
@@ -16,7 +16,7 @@ const gabiPortfolio = {
             'Based on a personal template (https://tstemplateui.netlify.app/)',
             'Developed a system to cater for posts with different media types and text styles.'
         ],
-        technologies: ['React', 'MaterialUI', 'Redux']
+        technologies: ['React', 'MaterialUI', 'Redux', 'GSAP']
     },
     es: {
         title: 'Portfolio de diseñadora UX UI',
@@ -25,7 +25,7 @@ const gabiPortfolio = {
             'Basado en un template personal (https://tstemplateui.netlify.app/)',
             'Desarrollado un sistema para aceptar posts con diferentes tipos de media y estilos de texto.'
         ],
-        technologies: ['React', 'MaterialUI', 'Redux']
+        technologies: ['React', 'MaterialUI', 'Redux', 'GSAP']
     }
 };
 

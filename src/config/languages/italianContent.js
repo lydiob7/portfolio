@@ -1,76 +1,75 @@
-const englishContent = {
+const italianContent = {
     errorPage: {
-        pageTile: 'Oops! Page not found.',
+        pageTile: 'Ops! Pagina non trovata.',
         message:
-            'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.',
-        homeButton: 'Back to Home'
+            'La pagina che sta cercando potrebbe essere stata rimossa, il suo nome è stato modificato o è temporaneamente non disponibile.',
+        homeButton: 'Torna alla home page'
     },
     footer: {
-        copyright: 'All rights reserved',
+        copyright: 'Tutti i diritti riservati',
         menuItems: {
-            terms: 'Terms & Conditions',
-            privacyPolicy: 'Privacy Policy'
+            terms: 'Termini e Condizioni',
+            privacyPolicy: 'Informativa sulla privacy'
         }
     },
     general: {
-        skipNavigationAnchor: 'Skip navigation'
+        skipNavigationAnchor: 'salta la navigazione'
     },
     aboutPage: {
-        pageTitle: 'About',
+        pageTitle: 'Su di me',
         bio: [
-            "I'm an Italian-Argentinian (based in France) Full Stack Developer with a background in Popular Music. Enthusiast of web technologies, learning new skills, and finding new creative ways of solving problems. Currently working as Frontend Developer at",
-            'I have worked as a Music teacher in my home country for five years until my urge of adventure made me decide to hit the road and travel around the world. By working as a teacher I learnt to work as part of an interdisciplinary team. Travel helped me to acquire the confidence to quickly adapt to various situations. ',
-            'I have solid knowledge of ReactJs, Redux, HTML5, CSS (with pre processors and libraries such as Sass or Tailwind) and an extensive knowledge of React Native and backend technologies (NodeJS, Express, MongoDB)'
+            'Sono uno Sviluppatore Full Stack italo-argentino (basato sul mondo) con un background nella Musica popolare. Appassionato di tecnologie web, apprendimento di nuove competenze e ricerca di nuovi modi creativi di risolvere i problemi.',
+            "Ho lavorato come insegnante di musica nel mio paese d'origine per cinque anni fino a quando la mia voglia di avventura mi ha fatto decidere di mettermi in viaggio e viaggiare in tutto il mondo. Lavorando come insegnante ho imparato a lavorare come parte di un team interdisciplinare. Il viaggio mi ha aiutato ad acquisire la sicurezza di adattarmi rapidamente alle varie situazioni.",
+            'Ho una solida conoscenza di ReactJs, Redux, HTML5, CSS (con preprocessori e librerie come Sass o Tailwind) e una vasta conoscenza de React Native e tecnologie backend (NodeJS, Express, MongoDB)'
         ],
-        resumeLink: 'Resume',
-        eventsTitle: 'Important events',
+        resumeLink: 'Curriculum vitae',
+        eventsTitle: 'Eventi importanti',
         eventList: [
             {
                 year: '1991',
-                content: 'I born',
-                status: 'Happy kid'
+                content: 'Sono nato',
+                status: 'Bambino felice'
             },
             {
                 year: '2017',
-                content: 'Master in Popular Music',
-                status: 'Graduated'
+                content: 'Laurea specialistica in Musica Popolare',
+                status: 'Laureato'
             },
             {
                 year: '2018-2019',
-                content: 'Working holiday in Australia',
-                status: 'Traveler'
+                content: 'Lavoro e vacanze in Australia',
+                status: 'Viaggiatore'
             },
             {
                 year: '2020',
                 content: 'Ironhack',
-                status: 'Student'
+                status: 'Studente'
             },
             {
                 year: '2021',
                 content: 'Smart Studios',
-                status: 'Front-end'
+                status: 'Sviluppatore Front-end'
             }
         ]
     },
     homePage: {
         banner: {
-            descriptionOne: 'Hello there, I am Tomi Scattini, Full Stack Developer by day',
-            descriptionTwo: ', and musician the rest of the day.'
+            descriptionOne: 'Ciao a tutti, Io sono Tomi Scattini, Sviluppatore Full Stack di giorno',
+            descriptionTwo: ', e musicista il resto della giornata.'
         },
         contact: {
-            message: 'Say Hi',
-            designBy: 'Designed by',
-            secondPictureCredits: 'The second Photography on landing page was taken by'
+            message: 'Dì ciao',
+            designBy: 'disegnato da',
+            secondPictureCredits: 'La seconda fotografia della copertina è stata scattata da'
         },
         projects: {
-            pageTitle: 'Projects',
-            subtitle: 'Some projects that I am proud of'
+            pageTitle: 'Progetti',
+            subtitle: 'Alcuni progetti di cui sono orgoglioso'
         },
         skills: {
-            pageTitle: 'Some of the things I know how to do',
-            pageSubtitle: 'Select the technologies and check out my work',
-            viewResults: 'View results',
-            resetAll: 'Reset All'
+            pageTitle: 'Alcune delle cose che so fare',
+            viewResults: 'Visualizza i risultati',
+            resetAll: 'Ripristina tutto'
         }
     },
     landingPage: {
@@ -136,10 +135,10 @@ const englishContent = {
         visitWebsiteButton: 'Visit our Website'
     },
     navigationMenu: {
-        work: 'Work',
-        about: 'About',
-        contact: 'Contact',
-        letsTalk: "Let's talk"
+        work: 'Lavoro',
+        about: 'Su di me',
+        contact: 'Contatto',
+        letsTalk: 'Parliamo'
     },
     privacyPolicy: {
         title: 'Privacy Policy',
@@ -191,16 +190,16 @@ const englishContent = {
         }
     },
     projectPage: {
-        aboutTitle: 'About project',
-        technologiesTitle: 'Technologies',
-        codeTitle: 'Check the code',
-        liveTitle: 'Live project',
-        repoLink: 'Github link',
-        seeAll: 'See All',
-        websiteLink: 'Website link'
+        aboutTitle: 'Sul progetto',
+        technologiesTitle: 'Tecnologie',
+        codeTitle: 'Guarda il codice',
+        liveTitle: 'Progetto live',
+        repoLink: 'Link Github',
+        seeAll: 'Guarda Tutto',
+        websiteLink: 'Link Sito Web'
     },
     resultsPage: {
-        pageTitle: 'Results',
+        pageTitle: 'Risultati',
         repoLink: 'Repository'
     },
     settingsPage: {
@@ -228,9 +227,9 @@ const englishContent = {
         }
     },
     supportedLanguages: {
-        en: 'English',
-        es: 'Spanish',
-        it: 'Italian'
+        en: 'Inglese',
+        es: 'Spagnolo',
+        it: 'Italiano'
     },
     termsAndConditions: {
         title: 'Terms & Conditions',
@@ -239,4 +238,4 @@ const englishContent = {
     }
 };
 
-export default englishContent;
+export default italianContent;

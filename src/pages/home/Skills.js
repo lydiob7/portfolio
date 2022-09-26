@@ -28,6 +28,13 @@ const useStyles = makeStyles((theme) => ({
             }
         }
     },
+    pageSubtitle: {
+        [theme.breakpoints.up('md')]: {
+            fontSize: '1rem',
+            width: '65%',
+            margin: '0 auto'
+        }
+    },
     root: {
         minHeight: '100vh',
         color: theme.palette.primary.main,
@@ -175,6 +182,7 @@ const Skills = forwardRef(({ classes, ...props }, ref) => {
             <h2 className={clsx(internalClasses.pageTitle, 'font-primary', currentLanguage === 'es' && 'wider')}>
                 {textProvider?.pageTitle}
             </h2>
+            <p className={clsx(internalClasses.pageSubtitle, '')}>{textProvider?.pageSubtitle}</p>
 
             <div ref={scrollAreaRef} className={internalClasses.skillsGrid}>
                 {chunkanizedSkills?.map((chunk, index) => {
@@ -212,12 +220,12 @@ const Skills = forwardRef(({ classes, ...props }, ref) => {
             <div className="flex items-center justify-center mt-16">
                 {Object.keys(checkedSkills)?.length > 0 ? (
                     <Link to={`/results?skills=${Object.keys(checkedSkills)?.join(',')}`}>
-                        <Button className={clsx(internalClasses.button, internalClasses?.underlineLink)} variant="text">
+                        <Button className={clsx(internalClasses.button, internalClasses?.underlineLink)}>
                             {textProvider?.viewResults}
                         </Button>
                     </Link>
                 ) : (
-                    <Button className={clsx(internalClasses.button, internalClasses.disabledButton)} variant="text">
+                    <Button className={clsx(internalClasses.button, internalClasses.disabledButton)}>
                         {textProvider?.viewResults}
                     </Button>
                 )}

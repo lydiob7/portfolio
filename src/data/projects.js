@@ -7,6 +7,7 @@ import tomiScattiniMainImage from 'assets/images/tomiscattini-main.png';
 import tomiScattiniOldMainImage from 'assets/images/tomiscattini-old-main.png';
 import templateUIMainImage from 'assets/images/template-ui-main.png';
 import vaikunthaMainImage from 'assets/images/vaikuntha-main.png';
+import migueBrunoMainImage from 'assets/images/migue-bruno-main.png';
 import bandaEspeciaMainImage from 'assets/images/banda-especia-main.png';
 
 class Projects {
@@ -79,7 +80,7 @@ class Projects {
         },
         {
             id: getRandomId(),
-            skills: ['javascript', 'react', 'redux', 'tailwind', 'html', 'css', 'contentful'],
+            skills: ['javascript', 'react', 'tailwind', 'html', 'css', 'contentful', 'gsap'],
             mainImage: vaikunthaMainImage,
             websiteUrl: 'https://vaikuntha.com.ar/',
             githubRepo: 'https://github.com/lydiob7/vaikuntha',
@@ -99,6 +100,25 @@ class Projects {
                     'Más de 5 páginas internas con data dinámica.',
                     'Blog integrado con Contentful.',
                     'Feed de Instagram para diferentes proyectos.'
+                ]
+            }
+        },
+        {
+            id: getRandomId(),
+            skills: ['javascript', 'react', 'tailwind', 'html', 'css', 'contentful', 'gsap'],
+            mainImage: migueBrunoMainImage,
+            websiteUrl: 'https://miguelbruno.es/',
+            githubRepo: 'https://github.com/lydiob7/migue-bruno-portfolio',
+            en: {
+                title: 'Miguel Bruñó',
+                about: ['Musician portfolio.', 'Fully animated one page website.', 'Dynamic data with Contentful.']
+            },
+            es: {
+                title: 'Miguel Bruñó',
+                about: [
+                    'Portfolio de músico',
+                    'Sition web de una sola página totalmente animada.',
+                    'Información dinámica con Contentful.'
                 ]
             }
         },

@@ -18,7 +18,7 @@ const spanishContent = {
     aboutPage: {
         pageTitle: 'Sobre mí',
         bio: [
-            'Soy Desarrollador Full Stack Italo-Argentino (internacional) con un background en Música Popular. Entusiasta de las tecnologías web, aprender nuevas habilidades, y encontrar nuevas maneras creativas de solucionar problemas.',
+            'Soy Desarrollador Full Stack Italo-Argentino (basado en Francia) con un background en Música Popular. Entusiasta de las tecnologías web, aprender nuevas habilidades, y encontrar nuevas maneras creativas de solucionar problemas. Actualmente trabajo como desarrollador Front End en',
             'Trabajé como profesor de música en mi país natal por cinco años hasta que mis ansias de aventura me hicieron decidir abrir nuevos caminor y viajar alrededor del mundo. Trabajando como profesor aprendí a ser parte de un equipo interdisciplinar. Viajar me ayudó a adquirir la confianza necesaria para adaptarme rápidamente a diferentes situaciones. ',
             'Tengo conocimientos sólidos de ReactJs, Redux, HTML5, CSS (con pre-procesadores y librerías como Sass o Tailwind) y un extenso conocimiento de React Native y tecnologías backend (NodeJS, Express, MongoDB)'
         ],
@@ -68,6 +68,7 @@ const spanishContent = {
         },
         skills: {
             pageTitle: 'Algunas de las cosas que sé hacer',
+            pageSubtitle: 'Seleccioná las tecnologías y evaluá mi trabajo',
             viewResults: 'Ver resultados',
             resetAll: 'Reiniciar todo'
         }
@@ -229,7 +230,8 @@ const spanishContent = {
     },
     supportedLanguages: {
         en: 'Inglés',
-        es: 'Español'
+        es: 'Español',
+        it: 'Italiano'
     },
     termsAndConditions: {
         title: 'Términos y Condiciones',
