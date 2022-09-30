@@ -1,3 +1,7 @@
+### v2.6.0
+
+-   Update: Update bio and cv.
+
 ### v2.5.0
 
 -   Update: Update bio.

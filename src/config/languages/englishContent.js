@@ -18,7 +18,7 @@ const englishContent = {
     aboutPage: {
         pageTitle: 'About',
         bio: [
-            "I'm an Italian-Argentinian (based in France) Full Stack Developer with a background in Popular Music. Enthusiast of web technologies, learning new skills, and finding new creative ways of solving problems. Currently working as Frontend Developer at",
+            "I'm an Italian-Argentinian (based in France) Front End Developer with a background in Popular Music. Enthusiast of web technologies, learning new skills, and finding new creative ways of solving problems. Currently working as Frontend Developer at",
             'I have worked as a Music teacher in my home country for five years until my urge of adventure made me decide to hit the road and travel around the world. By working as a teacher I learnt to work as part of an interdisciplinary team. Travel helped me to acquire the confidence to quickly adapt to various situations. ',
             'I have solid knowledge of ReactJs, Redux, HTML5, CSS (with pre processors and libraries such as Sass or Tailwind) and an extensive knowledge of React Native and backend technologies (NodeJS, Express, MongoDB)'
         ],
@@ -54,7 +54,7 @@ const englishContent = {
     },
     homePage: {
         banner: {
-            descriptionOne: 'Hello there, I am Tomi Scattini, Full Stack Developer by day',
+            descriptionOne: 'Hello there, I am Tomi Scattini, Front End Developer by day',
             descriptionTwo: ', and musician the rest of the day.'
         },
         contact: {

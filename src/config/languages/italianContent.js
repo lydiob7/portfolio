@@ -18,7 +18,7 @@ const italianContent = {
     aboutPage: {
         pageTitle: 'Su di me',
         bio: [
-            'Sono uno Sviluppatore Full Stack italo-argentino (basato sul mondo) con un background nella Musica popolare. Appassionato di tecnologie web, apprendimento di nuove competenze e ricerca di nuovi modi creativi di risolvere i problemi.',
+            'Sono uno Sviluppatore Front End italo-argentino (basato sul mondo) con un background nella Musica popolare. Appassionato di tecnologie web, apprendimento di nuove competenze e ricerca di nuovi modi creativi di risolvere i problemi.',
             "Ho lavorato come insegnante di musica nel mio paese d'origine per cinque anni fino a quando la mia voglia di avventura mi ha fatto decidere di mettermi in viaggio e viaggiare in tutto il mondo. Lavorando come insegnante ho imparato a lavorare come parte di un team interdisciplinare. Il viaggio mi ha aiutato ad acquisire la sicurezza di adattarmi rapidamente alle varie situazioni.",
             'Ho una solida conoscenza di ReactJs, Redux, HTML5, CSS (con preprocessori e librerie come Sass o Tailwind) e una vasta conoscenza de React Native e tecnologie backend (NodeJS, Express, MongoDB)'
         ],
@@ -54,7 +54,7 @@ const italianContent = {
     },
     homePage: {
         banner: {
-            descriptionOne: 'Ciao a tutti, Io sono Tomi Scattini, Sviluppatore Full Stack di giorno',
+            descriptionOne: 'Ciao a tutti, Io sono Tomi Scattini, Sviluppatore Front End di giorno',
             descriptionTwo: ', e musicista il resto della giornata.'
         },
         contact: {
