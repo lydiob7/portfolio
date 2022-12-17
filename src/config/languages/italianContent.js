@@ -49,12 +49,17 @@ const italianContent = {
                 year: '2021',
                 content: 'Smart Studios',
                 status: 'Sviluppatore Front-end'
+            },
+            {
+                year: '2022',
+                content: 'Cube Hub',
+                status: 'Sviluppatore Full-Stack'
             }
         ]
     },
     homePage: {
         banner: {
-            descriptionOne: 'Ciao a tutti, Io sono Tomi Scattini, Sviluppatore Front End di giorno',
+            descriptionOne: 'Ciao a tutti, Io sono Tomi Scattini, Sviluppatore Full Stack di giorno',
             descriptionTwo: ', e musicista il resto della giornata.'
         },
         contact: {
@@ -196,7 +201,8 @@ const italianContent = {
         liveTitle: 'Progetto live',
         repoLink: 'Link Github',
         seeAll: 'Guarda Tutto',
-        websiteLink: 'Link Sito Web'
+        websiteLink: 'Link Sito Web',
+        notApplicable: 'N/A o repo privato'
     },
     resultsPage: {
         pageTitle: 'Risultati',

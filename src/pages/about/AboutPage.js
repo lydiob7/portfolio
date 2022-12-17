@@ -115,8 +115,8 @@ const AboutPage = ({ classes, ...props }) => {
                     <p key={paragraph}>
                         {paragraph}{' '}
                         {i === 0 ? (
-                            <a href="https://smartstudios.io" target="_blank" rel="noreferrer">
-                                Smart Studios
+                            <a href="https://www.cubehub.co/" target="_blank" rel="noreferrer">
+                                Cube Hub
                             </a>
                         ) : (
                             ''

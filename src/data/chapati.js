@@ -3,12 +3,12 @@ import mainImage from 'assets/images/chapati-main.png';
 const chapati = {
     number: '02',
     id: 'chapati',
-    featured: true,
+    featured: false,
     skills: ['javascript', 'react', 'html', 'css', 'typescript', 'gsap'],
     mainImage,
     websiteUrl: 'https://www.chapati-delta.com.ar/',
     githubRepo: 'https://github.com/lydiob7/chapati',
-    next: 'tierra-roja',
+    next: 'migue-bruno',
     previous: 'gabi-portfolio',
     en: {
         title: 'Chapati',

@@ -3,7 +3,7 @@ import mainImage from 'assets/images/tierraroja-main.png';
 const tierraRoja = {
     number: '03',
     id: 'tierra-roja',
-    featured: true,
+    featured: false,
     skills: [
         'javascript',
         'react',

@@ -18,7 +18,7 @@ const spanishContent = {
     aboutPage: {
         pageTitle: 'Sobre mí',
         bio: [
-            'Soy Desarrollador Front End Italo-Argentino (basado en Francia) con un background en Música Popular. Entusiasta de las tecnologías web, aprender nuevas habilidades, y encontrar nuevas maneras creativas de solucionar problemas. Actualmente trabajo como desarrollador Front End en',
+            'Soy Desarrollador Front End Italo-Argentino (basado en Francia) con un background en Música Popular. Entusiasta de las tecnologías web, aprender nuevas habilidades, y encontrar nuevas maneras creativas de solucionar problemas. Actualmente trabajo como desarrollador Full Stack en',
             'Trabajé como profesor de música en mi país natal por cinco años hasta que mis ansias de aventura me hicieron decidir abrir nuevos caminor y viajar alrededor del mundo. Trabajando como profesor aprendí a ser parte de un equipo interdisciplinar. Viajar me ayudó a adquirir la confianza necesaria para adaptarme rápidamente a diferentes situaciones. ',
             'Tengo conocimientos sólidos de ReactJs, Redux, HTML5, CSS (con pre-procesadores y librerías como Sass o Tailwind) y un extenso conocimiento de React Native y tecnologías backend (NodeJS, Express, MongoDB)'
         ],
@@ -49,12 +49,17 @@ const spanishContent = {
                 year: '2021',
                 content: 'Smart Studios',
                 status: 'Front-end'
+            },
+            {
+                year: '2022',
+                content: 'Cube Hub',
+                status: 'Full-Stack'
             }
         ]
     },
     homePage: {
         banner: {
-            descriptionOne: 'Hola, Soy Tomi Scattini, Desarrollador Front End de día',
+            descriptionOne: 'Hola, Soy Tomi Scattini, Desarrollador Full Stack de día',
             descriptionTwo: ', y músico el resto del día.'
         },
         contact: {
@@ -198,7 +203,8 @@ const spanishContent = {
         liveTitle: 'Proyecto en vivo',
         repoLink: 'Link github',
         seeAll: 'Ver Todo',
-        websiteLink: 'Link website'
+        websiteLink: 'Link website',
+        notApplicable: 'N/A o repositorio privado'
     },
     resultsPage: {
         pageTitle: 'Resultados',

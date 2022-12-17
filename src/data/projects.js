@@ -1,5 +1,6 @@
 import { getRandomId } from 'utils/helpers';
 import chapati from 'data/chapati';
+import creativa from 'data/creativa';
 import gabiPortfolio from 'data/gabiPortfolio';
 import tierraRoja from 'data/tierraRoja';
 
@@ -7,6 +8,7 @@ import tomiScattiniMainImage from 'assets/images/tomiscattini-main.png';
 import tomiScattiniOldMainImage from 'assets/images/tomiscattini-old-main.png';
 import templateUIMainImage from 'assets/images/template-ui-main.png';
 import vaikunthaMainImage from 'assets/images/vaikuntha-main.png';
+import inrangeMainImage from 'assets/images/inrange-main.png';
 import migueBrunoMainImage from 'assets/images/migue-bruno-main.png';
 import bandaEspeciaMainImage from 'assets/images/banda-especia-main.png';
 
@@ -14,6 +16,7 @@ class Projects {
     rawData = [
         gabiPortfolio,
         chapati,
+        creativa,
         tierraRoja,
         {
             id: getRandomId(),
@@ -104,17 +107,52 @@ class Projects {
             }
         },
         {
-            id: getRandomId(),
+            number: '03',
+            featured: true,
+            id: 'inrange',
+            skills: ['javascript', 'react', 'tailwind', 'html', 'css', 'gsap'],
+            mainImage: inrangeMainImage,
+            websiteUrl: 'https://inrange.io/',
+            githubRepo: null,
+            previous: 'creativa',
+            next: 'migue-bruno',
+            en: {
+                title: 'InRange',
+                technologies: ['JavaScript', 'React', 'Tailwind', 'HTML5', 'CSS3', 'GSAP'],
+                about: [
+                    'Professional website for a renewable energy company from UK.',
+                    'Multiple animations including scroll triggered ones.',
+                    'Fully responsive'
+                ]
+            },
+            es: {
+                title: 'InRange',
+                technologies: ['JavaScript', 'React', 'Tailwind', 'HTML5', 'CSS3', 'GSAP'],
+                about: [
+                    'Portfolio de músico',
+                    'Sition web profesional para una empresa de energías renovables de RU.',
+                    'Múltiples animaciones incluyendo algunas disparadas por el scroll.',
+                    'Totalmente adaptable a todas las pantallas.'
+                ]
+            }
+        },
+        {
+            number: '04',
+            featured: true,
+            id: 'migue-bruno',
             skills: ['javascript', 'react', 'tailwind', 'html', 'css', 'contentful', 'gsap'],
             mainImage: migueBrunoMainImage,
             websiteUrl: 'https://miguelbruno.es/',
             githubRepo: 'https://github.com/lydiob7/migue-bruno-portfolio',
+            previous: 'inrange',
             en: {
                 title: 'Miguel Bruñó',
+                technologies: ['JavaScript', 'React', 'Tailwind', 'HTML5', 'CSS3', 'Contentful', 'GSAP'],
                 about: ['Musician portfolio.', 'Fully animated one page website.', 'Dynamic data with Contentful.']
             },
             es: {
                 title: 'Miguel Bruñó',
+                technologies: ['JavaScript', 'React', 'Tailwind', 'HTML5', 'CSS3', 'Contentful', 'GSAP'],
                 about: [
                     'Portfolio de músico',
                     'Sition web de una sola página totalmente animada.',

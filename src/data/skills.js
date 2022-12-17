@@ -36,10 +36,10 @@ const skills = [
     //     id: 'scss',
     //     title: 'SCSS/SASS'
     // },
-    // {
-    //     id: 'wordpress',
-    //     title: 'Wordpress'
-    // },
+    {
+        id: 'wordpress',
+        title: 'Wordpress'
+    },
     {
         id: 'firebase',
         title: 'Firebase'

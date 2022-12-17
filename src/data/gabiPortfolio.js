@@ -8,7 +8,7 @@ const gabiPortfolio = {
     mainImage,
     websiteUrl: 'https://gabrielapolancoferreyra.com/',
     githubRepo: 'https://github.com/lydiob7/gabi-portfolio',
-    next: 'chapati',
+    next: 'creativa',
     en: {
         title: 'UX UI Designer Portfolio',
         about: [

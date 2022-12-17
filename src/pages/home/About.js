@@ -62,8 +62,8 @@ const About = forwardRef(({ classes, ...props }, ref) => {
 
                 <p className={internalClasses.bio}>
                     {textProvider?.bio?.[0]}{' '}
-                    <a href="https://smartstudios.io" target="_blank" rel="noreferrer">
-                        Smart Studios
+                    <a href="https://www.cubehub.co/" target="_blank" rel="noreferrer">
+                        Cube Hub
                     </a>
                 </p>
 

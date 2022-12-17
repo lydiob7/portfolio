@@ -135,6 +135,9 @@ const useStyles = makeStyles((theme) => ({
                             fontSize: '.9rem'
                         }
                     }
+                },
+                '& .no-repo': {
+                    color: '#AAAAAA'
                 }
             }
         },
@@ -269,9 +272,13 @@ const ProjectPage = ({ classes, ...props }) => {
                 <div ref={thirdSkillGroup} id="3" className="section">
                     <p className="number">03</p>
                     <h3 className="title">{textProvider?.codeTitle}</h3>
-                    <a href={currentProject?.githubRepo} target="_blank" rel="noreferrer">
-                        {textProvider?.repoLink}
-                    </a>
+                    {currentProject?.githubRepo ? (
+                        <a href={currentProject.githubRepo} target="_blank" rel="noreferrer">
+                            {textProvider?.repoLink}
+                        </a>
+                    ) : (
+                        <span className="no-repo">{textProvider.notApplicable}</span>
+                    )}
                 </div>
                 <div ref={fourthSkillGroup} id="4" className="section">
                     <p className="number">04</p>
