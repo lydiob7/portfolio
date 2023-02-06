@@ -1,3 +1,7 @@
+### v2.6.1
+
+-   Update: Remove inrange from featured projects.
+
 ### v2.6.0
 
 -   Update: Update bio and cv.
